@@ -1,0 +1,8 @@
+(1) Check version numbers in 
+    ../master/common.ch
+    [if changing, cd .. ; make source]
+    Manual.ch
+    ../../index.html
+(2) cd ../java; build
+(3) cd ../distrib ; bundle
+(4) cd .. ; make clean ; make source

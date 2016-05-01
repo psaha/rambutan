@@ -1,0 +1,27 @@
+cp -p ../master/common.c .
+cp -p ../master/pathopen.c .
+cp -p ../java/tangle.c .
+cp -p ../java/weave.c .
+cp -p ../master/*.ch src
+cp -p ../java/java.spider src
+mv ../../local/tex/javaweb.tex jw1.tex
+tail -28 jw1.tex > jw2.tex
+cat src/webmaca.tex jw2.tex > javaweb.tex
+cat src/webmacb.tex jw2.tex > javawebb.tex
+rm -f jw1.tex jw2.tex
+zip Rambutan.zip README makefile \
+    common.c pathopen.c tangle.c weave.c javaweb.tex javawebb.tex \
+    Manual.w Manual.ch Primes.w primes.html src/*
+javatangle Manual Manual
+javac -source 1.2 -target 1.2 Primes.java
+javaweave -x Manual Manual
+pdftex Manual
+pdftex Manual
+mv javaweb*.tex ../../local/tex/
+chmod 664 Rambutan.zip Primes.class Manual.pdf
+mv Rambutan.zip ../../local/html/
+mv Primes.class ../../local/html/
+mv Manual.pdf ../../local/html/
+rm -f Primes.java Manual.java Manual.tex Manual.toc Manual.log
+
+

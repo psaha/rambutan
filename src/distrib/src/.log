@@ -1,0 +1,13 @@
+This is pdfTeX, Version 3.14159-14h-released-20010417 (Web2C 7.3.3.1) (format=pdftex 2003.2.18)  1 OCT 2003 16:44
+**Manual
+(/usr/share/texmf/tex/latex/tools/.tex{/usr/share/texmf/pdftex/config/pdftex.cf
+g}
+! Interruption.
+<to be read again> 
+                   \immediate 
+<everyjob> \immediate 
+                      \write 16{\the \toks 8 loaded.}
+l.1 
+    %%
+? x
+No pages of output.

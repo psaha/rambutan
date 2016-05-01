@@ -1,0 +1,133 @@
+# Modified
+
+# Copyright 1989 by Norman Ramsey, Odyssey Research Associates.
+# To be used for research purposes only.
+# For more information, see file COPYRIGHT in the parent directory.
+
+THETANGLE=tangle
+THEWEAVE=weave
+SPIDER=any.spider
+# CC= cc -DDEBUG -g -DSTAT
+CC = gcc -m64 -fno-builtin-exit -g -DDEBUG -w
+AWK = gawk-RH
+DVI=dvi
+
+CPUTYPE=`arch`
+
+# Change the following three directories to match your installation
+#
+# the odd placement of # is to prevent any trailing spaces from slipping in
+
+WEBROOT=$(HOME)/Git/rambutan/src#  	# root of the WEB source distribution
+DEST=$(HOME)/Git/rambutan/local/bin#	# place where the executables go
+MACROS=$(HOME)/Git/rambutan/local/tex#	# place where the macros go
+
+MASTER=$(WEBROOT)/master# 	# master source directory
+OBDIR=$(MASTER)/$(CPUTYPE)#	# common object files
+
+TANGLESRC=tangle
+CTANGLE=ceetangle -I$(MASTER)
+CWEAVE=ceeweave -I$(MASTER)
+AWKTANGLE=awktangle -I$(MASTER)
+COMMONOBJS=$(OBDIR)/common.o $(OBDIR)/pathopen.o
+COMMONC=$(MASTER)/common.c $(MASTER)/pathopen.c
+COMMONSRC=$(COMMONC) $(MASTER)/spider.awk
+
+
+
+# Our purpose is to make tangle and weave
+
+web: tangle weave
+
+tangle: $(COMMONOBJS) $(TANGLESRC).o
+	$(CC) -o $(DEST)/$(THETANGLE) $(COMMONOBJS) $(TANGLESRC).o
+
+weave: $(COMMONOBJS) weave.o
+	$(CC) -o $(DEST)/$(THEWEAVE) $(COMMONOBJS) weave.o
+
+
+source: $(TANGLESRC).c $(COMMONSRC) # make tangle.c and common src, then clean
+	if [ -f WebMakefile ]; then exit 1; fi  # don't clean the master!
+	if [ -f spiderman.tex ]; then exit 1; fi # don't clean the manual
+	-rm -f tangle.web tangle.ch weave.* common.* # remove obsolete links
+	-rm -f *.unsorted *.list grammar.web outtoks.web scraps.web 
+	-rm -f cycle.test spider.slog
+	-rm -f *.o *.tex *.toc *.dvi *.log *.makelog *~ *.wlog *.printlog
+
+# Here is how we make the common stuff
+
+$(MASTER)/common.c: $(MASTER)/common.web $(MASTER)/common.ch # change file
+	$(CTANGLE) $(MASTER)/common.web $(MASTER)/common.ch
+
+$(OBDIR)/common.o: $(MASTER)/common.c $(OBDIR)
+	$(CC) -c $(MASTER)/common.c
+	mv common.o $(OBDIR)
+
+
+$(MASTER)/pathopen.c: $(MASTER)/pathopen.web # no change file
+	$(CTANGLE) $(MASTER)/pathopen.web
+	mv pathopen.h $(MASTER)
+
+$(OBDIR)/pathopen.o: $(MASTER)/pathopen.c $(OBDIR)
+	$(CC) -c $(MASTER)/pathopen.c
+	mv pathopen.o $(OBDIR)
+
+$(OBDIR):
+	if /usr/bin/test ! -d $(OBDIR) ; then mkdir $(OBDIR) ; fi
+
+## Now we make the tangle and weave source locally
+
+$(TANGLESRC).c: $(MASTER)/$(TANGLESRC).web $(MASTER)/$(TANGLESRC).ch \
+                $(MASTER)/common.h grammar.web
+	-/bin/rm -f $(TANGLESRC).web $(TANGLESRC).ch
+	ln -s $(MASTER)/$(TANGLESRC).web $(TANGLESRC).web
+	ln -s $(MASTER)/$(TANGLESRC).ch $(TANGLESRC).ch
+	$(CTANGLE) $(TANGLESRC).web $(TANGLESRC).ch
+
+weave.c: $(MASTER)/weave.web $(MASTER)/weave.ch $(MASTER)/common.h grammar.web 
+	-/bin/rm -f weave.web weave.ch
+	ln -s $(MASTER)/weave.web weave.web
+	ln -s $(MASTER)/weave.ch weave.ch
+	$(CTANGLE) weave.web weave.ch
+
+## Here's where we run SPIDER to create the source
+
+grammar.web: $(MASTER)/cycle.awk $(MASTER)/spider.awk $(SPIDER)
+	echo "date" `date` | cat - $(SPIDER) | $(AWK) -f $(MASTER)/spider.awk
+	cat $(MASTER)/transcheck.list trans_keys.unsorted | $(AWK) -f $(MASTER)/transcheck.awk
+	$(AWK) -f $(MASTER)/cycle.awk < cycle.test
+	sort *.unsorted | $(AWK) -f $(MASTER)/nodups.awk
+	mv *web.tex $(MACROS)
+
+## We might have to make spider first.
+
+$(MASTER)/spider.awk: $(MASTER)/spider.web
+	$(AWKTANGLE) $(MASTER)/spider.web
+	mv cycle.awk nodups.awk transcheck.awk $(MASTER)
+	rm junk.list
+
+
+# $(MASTER)/cycle.awk: $(MASTER)/cycle.web # making spider also makes cycle
+# 	$(AWKTANGLE) $(MASTER)/cycle
+
+
+clean:
+	if [ -f WebMakefile ]; then exit 1; fi # don't clean the master!
+	if [ -f spiderman.tex ]; then exit 1; fi # don't clean the manual
+	if [ -f Manual.w ]; then exit 1; fi # don't clean the distrib
+	-rm -f tangle.* weave.* common.*
+	-rm -f *.unsorted *.list grammar.web outtoks.web scraps.web
+	-rm -f cycle.test spider.slog
+	-rm -f *.c *.o *.tex *.toc *.dvi *.log *.makelog *~ *.wlog *.printlog
+
+# booting the new distribution
+boot:
+	if [ ! -d $(OBDIR) ]; then mkdir $(OBDIR); fi
+	cd ../master; rm -f *.o; for i in $(COMMONC); do \
+		$(CC) -c $$i; \
+		mv *.o $(OBDIR) ; \
+	done; cd ../c
+	$(CC) -c $(TANGLESRC).c; \
+	$(CC) -o $(DEST)/$(THETANGLE) $(COMMONOBJS) $(TANGLESRC).o
+
+ 

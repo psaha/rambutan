@@ -1,0 +1,3 @@
+#!/bin/csh -f
+make -f ../master/WebMakefile \
+ THETANGLE=ceetangle THEWEAVE=ceeweave SPIDER=c.spider $*

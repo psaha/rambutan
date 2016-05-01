@@ -1,0 +1,37 @@
+# Modified
+
+How to install Spidery WEB:
+
+1) Pick a directory to install the WEB source in. Call it WEBROOT.
+
+2) untar the distribution in WEBROOT (cd WEBROOT; tar xvf spiderweb.tar)
+
+3) change to the master subdirectory and edit WebMakefile.
+	-- Set WEBROOT to the WEBROOT directory
+	-- Set DEST to the name of a directory to hold the executables
+	-- Set MACROS to the name of directory to hold TeX macros
+   Example:
+	WEBROOT=/usr/src/local/spiderweb
+	DEST=/usr/local
+	MACROS=/usr/lib/tex/macros
+
+   Make sure there are no spaces following the names.
+
+5) Check that your system has an `arch' program. If not, make one (a shell
+   script is fine) and put it somewhere on your path.
+
+6) Check that your system has `awk'.
+
+7) Go into WEBROOT and type `make boot'
+
+   Once this is successful you will have executable versions of tangle for
+   C and Awk, which is the minumum needed to make other things.  After you've
+   done this, you can afford to `make clean', which will remove the .c and
+   .awk source you used to bootstrap yourself.  You can always make them over
+   again using the executable versions (`make source').
+
+   In case it isn't clear, once you `make boot' you will never need to do
+   it again.
+
+8) Go into the java directory and type `build'.
+
