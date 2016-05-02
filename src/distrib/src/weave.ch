@@ -132,9 +132,11 @@ changed_module[module_count]=change_exists;
   flush_buffer(out_ptr-1,1); return 0;
 @z
 
-@x lines 1130
+@x lines 1129
+  ASCII s[6];
   sprintf(s,"%d",n); out_str(s);
 @y
+  ASCII s[11];
   sprintf(s,"\\LP{%d}",n); out_str(s);
 @z
 

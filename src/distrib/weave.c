@@ -107,6 +107,7 @@ extern boolean print_where;
 /*:10*//*11:*/
 #line 131 ""
 
+#line 132 ""
 extern int argc;
 extern char * *argv;
 extern no_xref;
@@ -124,6 +125,7 @@ FILE *tex_file;
 /*17:*/
 #line 164 "weave.web"
 
+#line 165 "weave.web"
 typedef struct xref_info{
 sixteen_bits num;
 struct xref_info *xlink;
@@ -133,6 +135,7 @@ typedef xref_info *xref_pointer;
 /*:17*//*23:*/
 #line 269 "weave.web"
 
+#line 270 "weave.web"
 typedef sixteen_bits token;
 typedef token *token_pointer;
 typedef token_pointer *text_pointer;
@@ -140,6 +143,7 @@ typedef token_pointer *text_pointer;
 /*:23*//*111:*/
 #line 1431 "weave.web"
 
+#line 1432 "weave.web"
 typedef struct{
 eight_bits cat;
 eight_bits mathness;
@@ -179,6 +183,7 @@ boolean change_exists;
 /*:16*//*18:*/
 #line 171 "weave.web"
 
+#line 172 "weave.web"
 xref_info xmem[20000];
 xref_pointer xmem_end= xmem+20000-1;
 xref_pointer xref_ptr;
@@ -187,6 +192,7 @@ sixteen_bits xref_switch,mod_xref_switch;
 /*:18*//*24:*/
 #line 279 "weave.web"
 
+#line 280 "weave.web"
 token tok_mem[20000];
 token_pointer tok_mem_end= tok_mem+20000-1;
 token_pointer tok_start[2000];
@@ -206,16 +212,19 @@ eight_bits ccode[128];
 /*:30*//*35:*/
 #line 503 "weave.web"
 
+#line 504 "weave.web"
 name_pointer cur_module;
 int math_flag;
 
 /*:35*//*46:*/
 #line 703 "weave.web"
 ASCII cur_module_char;
+#line 704 "weave.web"
 
 /*:46*//*52:*/
 #line 787 "weave.web"
 
+#line 788 "weave.web"
 eight_bits next_control;
 
 /*:52*//*58:*/
@@ -272,6 +281,7 @@ int init_mathness,last_mathness;
 /*:116*//*129:*/
 #line 1864 "weave.web"
 
+#line 1865 "weave.web"
 #ifdef DEBUG
 int tracing;
 #endif DEBUG
@@ -297,6 +307,7 @@ stack_pointer max_stack_ptr;
 /*:166*//*170:*/
 #line 2291 "weave.web"
 
+#line 2292 "weave.web"
 name_pointer cur_name;
 
 /*:170*//*185:*/
@@ -308,17 +319,20 @@ ASCII *save_place;
 /*:185*//*197:*/
 #line 2789 "weave.web"
 
+#line 2790 "weave.web"
 name_pointer this_module;
 
 /*:197*//*202:*/
 #line 2865 "weave.web"
 
+#line 2866 "weave.web"
 xref_pointer next_xref,this_xref,first_xref,mid_xref;
 
 
 /*:202*//*207:*/
 #line 2947 "weave.web"
 
+#line 2948 "weave.web"
 extern int no_xref;
 
 /*:207*//*209:*/
@@ -349,11 +363,13 @@ scrap_pointer max_sort_ptr;
 /*:215*//*217:*/
 #line 3065 "weave.web"
 
+#line 3066 "weave.web"
 ASCII collate[102];
 
 /*:217*//*227:*/
 #line 3204 "weave.web"
 boolean do_file;
+#line 3205 "weave.web"
 /*:227*/
 #line 51 "weave.web"
 
@@ -376,6 +392,7 @@ xmem->num= 0;
 /*:19*//*25:*/
 #line 291 "weave.web"
 
+#line 292 "weave.web"
 tok_ptr= tok_mem+1;text_ptr= tok_start+1;tok_start[0]= tok_mem+1;
 tok_start[1]= tok_mem+1;
 
@@ -386,6 +403,7 @@ max_tok_ptr= tok_mem+1;max_text_ptr= tok_start+1;
 /*:25*//*31:*/
 #line 392 "weave.web"
 
+#line 393 "weave.web"
 {int c;for(c= 0;c<=127;c++)ccode[c]= 0;}
 ccode[' ']= ccode[011]= ccode['*']= 255;
 ccode['-']= 244;
@@ -413,6 +431,7 @@ ccode['"']= 13;
 /*32:*/
 #line 429 "weave.web"
 
+#line 430 "weave.web"
 #ifdef DEBUG
 ccode['0']= ccode['1']= ccode['2']= 249;
 #endif DEBUG
@@ -430,10 +449,12 @@ ccode[64]= 64;
 /*:31*//*47:*/
 #line 711 "weave.web"
 mod_text[0]= ' ';
+#line 712 "weave.web"
 
 /*:47*//*68:*/
 #line 1055 "weave.web"
 
+#line 1056 "weave.web"
 out_ptr= out_buf+1;out_line= 1;
 /*158:*/
 #line 497 ""
@@ -475,6 +496,7 @@ max_sort_ptr= scrap_info;
 /*:216*//*218:*/
 #line 3071 "weave.web"
 
+#line 3072 "weave.web"
 collate[0]= 0;strcpy(collate+1," \1\2\3\4\5\6\7\10\11\12\13\14\15\16\17\
 \20\21\22\23\24\25\26\27\30\31\32\33\34\35\36\37\
 !\42#$%&'()*+,-./:;<=>?@[\\]^`{|}~_\
@@ -489,55 +511,55 @@ abcdefghijklmnopqrstuvwxyz0123456789");
 /*157:*/
 #line 445 ""
 
-id_lookup("synchronized",NULL,80);
-id_lookup("volatile",NULL,84);
-id_lookup("char",NULL,69);
-id_lookup("instanceof",NULL,79);
-id_lookup("switch",NULL,65);
-id_lookup("interface",NULL,83);
-id_lookup("void",NULL,69);
-id_lookup("throw",NULL,74);
-id_lookup("native",NULL,84);
-id_lookup("new",NULL,71);
-id_lookup("do",NULL,82);
-id_lookup("else",NULL,72);
-id_lookup("throws",NULL,75);
-id_lookup("extends",NULL,75);
-id_lookup("this",NULL,86);
-id_lookup("catch",NULL,64);
-id_lookup("abstract",NULL,84);
-id_lookup("finally",NULL,85);
-id_lookup("super",NULL,86);
-id_lookup("continue",NULL,67);
-id_lookup("class",NULL,83);
-id_lookup("final",NULL,84);
-id_lookup("default",NULL,76);
-id_lookup("break",NULL,86);
-id_lookup("package",NULL,77);
-id_lookup("for",NULL,66);
-id_lookup("boolean",NULL,69);
+id_lookup("abstract",NULL,77);
 id_lookup("short",NULL,69);
-id_lookup("long",NULL,69);
-id_lookup("var",NULL,67);
-id_lookup("import",NULL,77);
-id_lookup("case",NULL,81);
-id_lookup("transient",NULL,84);
-id_lookup("try",NULL,85);
-id_lookup("return",NULL,73);
-id_lookup("null",NULL,86);
-id_lookup("false",NULL,86);
-id_lookup("while",NULL,68);
+id_lookup("null",NULL,66);
+id_lookup("class",NULL,72);
+id_lookup("catch",NULL,68);
+id_lookup("default",NULL,71);
 id_lookup("double",NULL,69);
-id_lookup("int",NULL,69);
-id_lookup("protected",NULL,78);
-id_lookup("byte",NULL,69);
-id_lookup("if",NULL,70);
-id_lookup("implements",NULL,75);
-id_lookup("static",NULL,84);
-id_lookup("private",NULL,78);
-id_lookup("public",NULL,78);
-id_lookup("true",NULL,86);
+id_lookup("import",NULL,74);
+id_lookup("if",NULL,82);
+id_lookup("break",NULL,66);
+id_lookup("static",NULL,77);
+id_lookup("new",NULL,67);
+id_lookup("volatile",NULL,77);
+id_lookup("do",NULL,81);
+id_lookup("long",NULL,69);
+id_lookup("throw",NULL,85);
 id_lookup("float",NULL,69);
+id_lookup("void",NULL,69);
+id_lookup("instanceof",NULL,84);
+id_lookup("protected",NULL,64);
+id_lookup("while",NULL,78);
+id_lookup("native",NULL,77);
+id_lookup("switch",NULL,70);
+id_lookup("var",NULL,79);
+id_lookup("synchronized",NULL,80);
+id_lookup("this",NULL,66);
+id_lookup("boolean",NULL,69);
+id_lookup("final",NULL,77);
+id_lookup("return",NULL,73);
+id_lookup("false",NULL,66);
+id_lookup("char",NULL,69);
+id_lookup("for",NULL,76);
+id_lookup("transient",NULL,77);
+id_lookup("public",NULL,64);
+id_lookup("try",NULL,86);
+id_lookup("int",NULL,69);
+id_lookup("private",NULL,64);
+id_lookup("extends",NULL,83);
+id_lookup("package",NULL,74);
+id_lookup("true",NULL,66);
+id_lookup("super",NULL,66);
+id_lookup("case",NULL,65);
+id_lookup("else",NULL,75);
+id_lookup("interface",NULL,72);
+id_lookup("finally",NULL,86);
+id_lookup("implements",NULL,83);
+id_lookup("byte",NULL,69);
+id_lookup("continue",NULL,79);
+id_lookup("throws",NULL,83);
 /*:157*/
 #line 61 "weave.web"
 ;
@@ -548,6 +570,7 @@ phase_three();
 /*229:*/
 #line 3213 "weave.web"
 
+#line 3214 "weave.web"
 printf(
 "\nMemory usage statistics: %d of %d names, %d of %d cross-references,\n",
 name_ptr-name_dir,name_dir_end-name_dir,
@@ -608,6 +631,7 @@ else if(q->num>=10240){
 /*22:*/
 #line 251 "weave.web"
 
+#line 252 "weave.web"
 {
 if((mod_xref_switch==10240&&q->num>=2 *10240)||
 (mod_xref_switch==2 *10240&&q->num<2 *10240)){
@@ -638,6 +662,7 @@ else r->xlink= xref_ptr;
 /*:21*//*26:*/
 #line 299 "weave.web"
 
+#line 300 "weave.web"
 names_match(p,first,l,t)
 name_pointer p;
 ASCII *first;
@@ -677,6 +702,7 @@ if(loc++<=limit)if(ccode[ *loc++]==255)return;
 /*:33*//*34:*/
 #line 453 "weave.web"
 unsigned skip_TeX()
+#line 454 "weave.web"
 {
 while(1){
 if(loc>limit&&get_line()==0)return(255);
@@ -703,6 +729,7 @@ c=  *(loc++);
 /*162:*/
 #line 504 ""
 
+#line 505 ""
 {int len;len= strlen("//");
 if(loc+len-1<=limit&&!strncmp(loc-1,"//",len)){
 loc+= len-1;
@@ -722,6 +749,7 @@ return 248;
 if(isdigit(c))/*40:*/
 #line 567 "weave.web"
 {
+#line 568 "weave.web"
 id_first= id_loc= mod_text+1;
 
 if( *(loc-1)=='.'&&!isdigit( *loc))goto mistake;
@@ -750,6 +778,7 @@ return(199);
 else if(isalpha(c)||c=='_')/*39:*/
 #line 558 "weave.web"
 {
+#line 559 "weave.web"
 id_first= --loc;
 while(isalpha( *++loc)||isdigit( *loc)|| *loc=='_');
 id_loc= loc;return(200);
@@ -761,6 +790,7 @@ id_loc= loc;return(200);
 else if(c=='\''||c=='"')/*43:*/
 #line 613 "weave.web"
 {
+#line 614 "weave.web"
 ASCII delim= c;
 id_first= mod_text+1;
 id_loc= mod_text;
@@ -821,6 +851,7 @@ return(198);
 else if(c==64)/*44:*/
 #line 669 "weave.web"
 {
+#line 670 "weave.web"
 c=  *loc++;
 switch(ccode[c]){
 case 126:xref_switch= 10240;continue;
@@ -833,6 +864,7 @@ case 238:
 /*50:*/
 #line 750 "weave.web"
 {
+#line 751 "weave.web"
 c= ccode[ *(loc-1)];id_first= loc; *(limit+1)= 64;
 while( *loc!=64)loc++;
 id_loc= loc;
@@ -852,11 +884,13 @@ case 254:
 /*45:*/
 #line 694 "weave.web"
 {
+#line 695 "weave.web"
 ASCII *k;
 cur_module_char= c;
 /*48:*/
 #line 713 "weave.web"
 
+#line 714 "weave.web"
 k= mod_text;
 while(1){
 if(loc>limit&&get_line()==0){
@@ -868,6 +902,7 @@ c=  *loc;
 /*49:*/
 #line 737 "weave.web"
 
+#line 738 "weave.web"
 if(c==64){
 c=  *(loc+1);
 if(c=='>'){
@@ -913,6 +948,7 @@ xref_switch= 0;return(254);
 case 2:/*51:*/
 #line 768 "weave.web"
 {
+#line 769 "weave.web"
 id_first= loc++; *(limit+1)= 64; *(limit+2)= '>';
 while( *loc!=64|| *(loc+1)!='>')loc++;
 if(loc>=limit)err_print("! Verbatim string didn't end");
@@ -928,6 +964,7 @@ case 239:
 /*43:*/
 #line 613 "weave.web"
 {
+#line 614 "weave.web"
 ASCII delim= c;
 id_first= mod_text+1;
 id_loc= mod_text;
@@ -988,6 +1025,7 @@ return(198);
 case 12:/*41:*/
 #line 591 "weave.web"
 {
+#line 592 "weave.web"
 id_first= id_loc= mod_text+1;
  *id_loc++= '~';
 while('0'<= *loc&& *loc<'8') *id_loc++=  *loc++;
@@ -999,6 +1037,7 @@ return(199);
 case 13:/*42:*/
 #line 598 "weave.web"
 {
+#line 599 "weave.web"
 id_first= id_loc= mod_text+1;
  *id_loc++= '^';
 while(isxdigit( *loc)){
@@ -1022,6 +1061,7 @@ else if(c==' '||c==011)continue;
 mistake:/*148:*/
 #line 3 ""
 
+#line 4 ""
 if(loc+2<=limit){
 if(strncmp("/**",loc-1,3)==0){
 loc+= 2;
@@ -1029,45 +1069,49 @@ return 197;
 }
 }
 if(loc+1<=limit){
-if(strncmp("+=",loc-1,2)==0){
+if(strncmp("==",loc-1,2)==0){
 loc+= 1;
-return 192;
-}
-else if(strncmp("||",loc-1,2)==0){
-loc+= 1;
-return 185;
+return 188;
 }
 else if(strncmp("-=",loc-1,2)==0){
 loc+= 1;
 return 191;
 }
+else if(strncmp("&&",loc-1,2)==0){
+loc+= 1;
+return 186;
+}
+else if(strncmp("||",loc-1,2)==0){
+loc+= 1;
+return 185;
+}
 else if(strncmp("<<",loc-1,2)==0){
 loc+= 1;
 return 184;
-}
-else if(strncmp("!=",loc-1,2)==0){
-loc+= 1;
-return 187;
 }
 else if(strncmp("<=",loc-1,2)==0){
 loc+= 1;
 return 190;
 }
-else if(strncmp("==",loc-1,2)==0){
+else if(strncmp("++",loc-1,2)==0){
 loc+= 1;
-return 188;
+return 194;
 }
 else if(strncmp(">=",loc-1,2)==0){
 loc+= 1;
 return 189;
 }
-else if(strncmp("++",loc-1,2)==0){
+else if(strncmp("!=",loc-1,2)==0){
 loc+= 1;
-return 194;
+return 187;
 }
-else if(strncmp("&&",loc-1,2)==0){
+else if(strncmp("--",loc-1,2)==0){
 loc+= 1;
-return 186;
+return 193;
+}
+else if(strncmp("+=",loc-1,2)==0){
+loc+= 1;
+return 192;
 }
 else if(strncmp("*/",loc-1,2)==0){
 loc+= 1;
@@ -1076,10 +1120,6 @@ return 195;
 else if(strncmp("/*",loc-1,2)==0){
 loc+= 1;
 return 196;
-}
-else if(strncmp("--",loc-1,2)==0){
-loc+= 1;
-return 193;
 }
 }
 /*:148*/
@@ -1327,12 +1367,14 @@ while( *s){if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)=  *s++;};
 /*:69*//*71:*/
 #line 1094 "weave.web"
 break_out()
+#line 1095 "weave.web"
 {
 ASCII *k= out_ptr;
 while(1){
 if(k==out_buf)/*72:*/
 #line 1113 "weave.web"
 
+#line 1114 "weave.web"
 {
 #line 126 "weave.ch"
 printf("! Line had to be broken (output l. %d):\n",out_line);
@@ -1362,9 +1404,10 @@ flush_buffer(k,1);return 0;
 /*:71*//*73:*/
 #line 1127 "weave.web"
 out_mod(n)sixteen_bits n;
+#line 1128 "weave.web"
 {
-ASCII s[6];
-#line 138 "weave.ch"
+#line 139 "weave.ch"
+ASCII s[11];
 sprintf(s,"\\LP{%d}",n);out_str(s);
 #line 1131 "weave.web"
 if(changed_module[n])out_str("\\*");
@@ -1373,6 +1416,7 @@ if(changed_module[n])out_str("\\*");
 /*:73*//*74:*/
 #line 1137 "weave.web"
 out_name(p)name_pointer p;{
+#line 1138 "weave.web"
 ASCII *k, *k_end= (p+1)->byte_start;
 {if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)= '{';};
 for(k= p->byte_start;k<k_end;k++){
@@ -1388,7 +1432,7 @@ if( *k=='_'|| *k=='%'|| *k=='#'|| *k=='^'|| *k=='{'|| *k=='}')
 }
 
 /*:74*//*75:*/
-#line 144 "weave.ch"
+#line 146 "weave.ch"
 void copy_limbo()
 #line 1163 "weave.web"
 {
@@ -1445,6 +1489,7 @@ err_print("! Braces don't balance in comment");
 /*80:*/
 #line 1265 "weave.web"
 
+#line 1266 "weave.web"
 {if(tok_ptr+2>tok_mem_end)stat_overflow("token"); *(tok_ptr++)= ' ';};
 while(bal-->0){if(tok_ptr+2>tok_mem_end)stat_overflow("token"); *(tok_ptr++)= '}';};
 
@@ -1461,6 +1506,7 @@ err_print("! Input ended in mid-comment");
 loc= buffer+1;/*80:*/
 #line 1265 "weave.web"
 
+#line 1266 "weave.web"
 {if(tok_ptr+2>tok_mem_end)stat_overflow("token"); *(tok_ptr++)= ' ';};
 while(bal-->0){if(tok_ptr+2>tok_mem_end)stat_overflow("token"); *(tok_ptr++)= '}';};
 
@@ -1486,6 +1532,7 @@ err_print("! Braces don't balance in comment");
 /*80:*/
 #line 1265 "weave.web"
 
+#line 1266 "weave.web"
 {if(tok_ptr+2>tok_mem_end)stat_overflow("token"); *(tok_ptr++)= ' ';};
 while(bal-->0){if(tok_ptr+2>tok_mem_end)stat_overflow("token"); *(tok_ptr++)= '}';};
 
@@ -1513,6 +1560,7 @@ err_print("! Illegal use of @ in comment");
 loc-= 2;if(phase==2)tok_ptr--;/*80:*/
 #line 1265 "weave.web"
 
+#line 1266 "weave.web"
 {if(tok_ptr+2>tok_mem_end)stat_overflow("token"); *(tok_ptr++)= ' ';};
 while(bal-->0){if(tok_ptr+2>tok_mem_end)stat_overflow("token"); *(tok_ptr++)= '}';};
 
@@ -1544,72 +1592,72 @@ print_cat(c)
 eight_bits c;
 {
 switch(c){
-PRINT_CAT(1,"simplsquare");
-PRINT_CAT(2,"star");
-PRINT_CAT(3,"unorbinop");
-PRINT_CAT(4,"stmt");
-PRINT_CAT(5,"simplthan");
-PRINT_CAT(6,"inst");
-PRINT_CAT(7,"instanceof");
-PRINT_CAT(8,"switch");
-PRINT_CAT(9,"def");
-PRINT_CAT(10,"lbrace");
-PRINT_CAT(11,"gthan");
-PRINT_CAT(12,"throw");
-PRINT_CAT(13,"rbrace");
-PRINT_CAT(14,"lsquare");
-PRINT_CAT(15,"new");
-PRINT_CAT(16,"do");
-PRINT_CAT(17,"else");
-PRINT_CAT(18,"extends");
-PRINT_CAT(19,"lparen");
-PRINT_CAT(20,"impsimp");
-PRINT_CAT(21,"compcasec");
-PRINT_CAT(22,"simplsimp");
-PRINT_CAT(23,"catch");
-PRINT_CAT(24,"incop");
-PRINT_CAT(25,"simplparen");
-PRINT_CAT(26,"class");
-PRINT_CAT(27,"colon");
-PRINT_CAT(28,"compstmt");
-PRINT_CAT(29,"moddef");
-PRINT_CAT(30,"bjc");
-PRINT_CAT(31,"semi");
-PRINT_CAT(32,"newline");
-PRINT_CAT(33,"for");
-PRINT_CAT(34,"equals");
-PRINT_CAT(35,"bjd");
-PRINT_CAT(36,"simp");
-PRINT_CAT(37,"elsecond");
-PRINT_CAT(38,"ifcond");
-PRINT_CAT(39,"expr");
-PRINT_CAT(40,"import");
-PRINT_CAT(41,"decl");
-PRINT_CAT(42,"unk");
-PRINT_CAT(43,"case");
+PRINT_CAT(1,"casec");
+PRINT_CAT(2,"simplparen");
+PRINT_CAT(3,"equals");
+PRINT_CAT(4,"simplsquare");
+PRINT_CAT(5,"unk");
+PRINT_CAT(6,"class");
+PRINT_CAT(7,"sync");
+PRINT_CAT(8,"catch");
+PRINT_CAT(9,"comma");
+PRINT_CAT(10,"compstmt");
+PRINT_CAT(11,"cast");
+PRINT_CAT(12,"import");
+PRINT_CAT(13,"if");
+PRINT_CAT(14,"dot");
+PRINT_CAT(15,"incop");
+PRINT_CAT(16,"static");
+PRINT_CAT(17,"new");
+PRINT_CAT(18,"unop");
+PRINT_CAT(19,"semi");
+PRINT_CAT(20,"do");
+PRINT_CAT(21,"simp");
+PRINT_CAT(22,"dowhile");
+PRINT_CAT(23,"star");
+PRINT_CAT(24,"bjc");
+PRINT_CAT(25,"throw");
+PRINT_CAT(26,"bjd");
+PRINT_CAT(27,"impsimp");
+PRINT_CAT(28,"elsecond");
+PRINT_CAT(29,"instanceof");
+PRINT_CAT(30,"while");
+PRINT_CAT(31,"rsquare");
+PRINT_CAT(32,"simplsimp");
+PRINT_CAT(33,"switch");
+PRINT_CAT(34,"colon");
+PRINT_CAT(35,"return");
+PRINT_CAT(36,"moddef");
+PRINT_CAT(37,"simplthan");
+PRINT_CAT(38,"binop");
+PRINT_CAT(39,"for");
+PRINT_CAT(40,"lbrace");
+PRINT_CAT(41,"lsquare");
+PRINT_CAT(42,"public");
+PRINT_CAT(43,"gthan");
 PRINT_CAT(44,"try");
-PRINT_CAT(45,"return");
-PRINT_CAT(46,"comma");
-PRINT_CAT(47,"rparen");
-PRINT_CAT(48,"lthan");
-PRINT_CAT(49,"binop");
-PRINT_CAT(50,"ejd");
-PRINT_CAT(51,"num");
-PRINT_CAT(52,"casec");
-PRINT_CAT(53,"sync");
-PRINT_CAT(54,"while");
-PRINT_CAT(55,"int");
-PRINT_CAT(56,"rsquare");
+PRINT_CAT(45,"int");
+PRINT_CAT(46,"lparen");
+PRINT_CAT(47,"def");
+PRINT_CAT(48,"rbrace");
+PRINT_CAT(49,"lthan");
+PRINT_CAT(50,"stmt");
+PRINT_CAT(51,"unorbinop");
+PRINT_CAT(52,"ifcond");
+PRINT_CAT(53,"extends");
+PRINT_CAT(54,"decl");
+PRINT_CAT(55,"rparen");
+PRINT_CAT(56,"ifclause");
 PRINT_CAT(57,"question");
-PRINT_CAT(58,"ifclause");
-PRINT_CAT(59,"cast");
-PRINT_CAT(60,"dowhile");
-PRINT_CAT(61,"ignore_scrap");
-PRINT_CAT(62,"if");
-PRINT_CAT(63,"static");
-PRINT_CAT(64,"public");
-PRINT_CAT(65,"dot");
-PRINT_CAT(66,"unop");
+PRINT_CAT(58,"ignore_scrap");
+PRINT_CAT(59,"case");
+PRINT_CAT(60,"compcasec");
+PRINT_CAT(61,"else");
+PRINT_CAT(62,"inst");
+PRINT_CAT(63,"num");
+PRINT_CAT(64,"newline");
+PRINT_CAT(65,"expr");
+PRINT_CAT(66,"ejd");
 case 0:printf("zero");break;
 default:printf("UNKNOWN");break;
 }
@@ -1711,9 +1759,11 @@ break;
 /*:117*//*119:*/
 #line 1653 "weave.web"
 
+#line 1654 "weave.web"
 /*120:*/
 #line 1686 "weave.web"
 
+#line 1687 "weave.web"
 
 sixteen_bits first_id(p)
 text_pointer p;
@@ -1750,7 +1800,7 @@ return 0;
 /*:120*/
 #line 1654 "weave.web"
 
-#line 150 "weave.ch"
+#line 152 "weave.ch"
 void make_underlined(p)
 #line 1656 "weave.web"
 
@@ -1783,6 +1833,7 @@ underline_xref(tok_value-10240+name_dir);
 /*:119*//*121:*/
 #line 1725 "weave.web"
 underline_xref(p)
+#line 1726 "weave.web"
 name_pointer p;
 {
 xref_pointer q= (xref_pointer)p->equiv_or_xref;
@@ -1790,7 +1841,7 @@ xref_pointer q= (xref_pointer)p->equiv_or_xref;
 xref_pointer r;
 sixteen_bits m;
 sixteen_bits n;
-#line 164 "weave.ch"
+#line 166 "weave.ch"
 if(no_xref)return 0;
 xref_switch= 10240;
 m= module_count+xref_switch;
@@ -1807,6 +1858,7 @@ q= q->xlink;
 /*122:*/
 #line 1755 "weave.web"
 
+#line 1756 "weave.web"
 if(xref_ptr==xmem_end)stat_overflow("cross-reference");else(++xref_ptr)->num= 0;
 #line 17 "weave.ch"
 ;
@@ -1854,6 +1906,7 @@ else pp= scrap_base;
 /*130:*/
 #line 1869 "weave.web"
 {
+#line 1870 "weave.web"
 scrap_pointer k;
 if(tracing==2){
 printf("\n%d:",n);
@@ -1877,7 +1930,7 @@ pp--;
 }
 
 /*:124*//*126:*/
-#line 178 "weave.ch"
+#line 180 "weave.ch"
 void squash(j,k,c,d,n)
 #line 1810 "weave.web"
 scrap_pointer j;
@@ -1899,6 +1952,7 @@ else pp= scrap_base;
 /*130:*/
 #line 1869 "weave.web"
 {
+#line 1870 "weave.web"
 scrap_pointer k;
 if(tracing==2){
 printf("\n%d:",n);
@@ -1928,6 +1982,7 @@ reduce(j,k,c,d,n);
 /*:126*//*131:*/
 #line 1898 "weave.web"
 text_pointer translate()
+#line 1899 "weave.web"
 {
 scrap_pointer i,
 j;
@@ -1935,6 +1990,7 @@ pp= scrap_base;lo_ptr= pp-1;hi_ptr= pp;
 /*134:*/
 #line 1940 "weave.web"
 
+#line 1941 "weave.web"
 #ifdef DEBUG
 if(tracing==2){
 printf("\nTracing after l. %d:\n",line[include_depth]);{if(history==0)history= 1;};
@@ -1952,10 +2008,12 @@ else fflush(stdout),write(1,buffer+1,loc-buffer);
 /*127:*/
 #line 1831 "weave.web"
 
+#line 1832 "weave.web"
 while(1){
 /*128:*/
 #line 1850 "weave.web"
 
+#line 1851 "weave.web"
 if(lo_ptr<pp+6-1){
 while(hi_ptr<=scrap_ptr&&lo_ptr!=pp+6-1){
 (++lo_ptr)->cat= hi_ptr->cat;lo_ptr->mathness= (hi_ptr)->mathness;
@@ -1984,20 +2042,20 @@ init_mathness= last_mathness= 0;
 #line 151 ""
 
 if((pp+0)->cat!=0&&
-(pp+1)->cat==61){
+(pp+1)->cat==58){
 
 app1(pp+0);
 app1(pp+1);
 reduce(pp+0,2,(pp+0)->cat,-5,1);
 goto end_prods;
 }if((pp+0)->cat!=0&&
-(pp+1)->cat==32){
+(pp+1)->cat==64){
 
 app1(pp+0);
 app1(pp+1);
 reduce(pp+0,2,(pp+0)->cat,-5,2);
 goto end_prods;
-}if((pp+0)->cat==29&&
+}if((pp+0)->cat==36&&
 (pp+1)->cat!=0){
 
 app1(pp+0);
@@ -2005,57 +2063,57 @@ app(137+6);
 app1(pp+1);
 reduce(pp+0,2,(pp+1)->cat,-5,3);
 goto end_prods;
-}if(((pp+0)->cat==55||
-(pp+0)->cat==36)&&
-(pp+1)->cat==36){
+}if(((pp+0)->cat==45||
+(pp+0)->cat==21)&&
+(pp+1)->cat==21){
 
 app1(pp+0);
 app_str("\\");
 app_str(" ");
 app1(pp+1);
-reduce(pp+0,2,41,-2,4);
+reduce(pp+0,2,54,-2,4);
 goto end_prods;
 }/*:86*//*87:*/
 #line 184 ""
 
-if((pp+0)->cat==55&&
-(pp+1)->cat==14&&
-(pp+2)->cat==56){
+if((pp+0)->cat==45&&
+(pp+1)->cat==41&&
+(pp+2)->cat==31){
 
 app1(pp+0);
 app1(pp+1);
 app_str("\\");
 app_str(",");
 app1(pp+2);
-reduce(pp+0,3,55,-2,5);
+reduce(pp+0,3,45,-2,5);
 goto end_prods;
-}if((pp+0)->cat==36&&
-(pp+1)->cat==14&&
-(pp+2)->cat==56){
+}if((pp+0)->cat==21&&
+(pp+1)->cat==41&&
+(pp+2)->cat==31){
 
 app1(pp+0);
 app1(pp+1);
 app_str("\\");
 app_str(",");
 app1(pp+2);
-reduce(pp+0,3,36,-4,6);
+reduce(pp+0,3,21,-4,6);
 goto end_prods;
-}if((pp+0)->cat==41&&
-(pp+1)->cat==14&&
-(pp+2)->cat==56){
+}if((pp+0)->cat==54&&
+(pp+1)->cat==41&&
+(pp+2)->cat==31){
 
 app1(pp+0);
 app1(pp+1);
 app_str("\\");
 app_str(",");
 app1(pp+2);
-reduce(pp+0,3,41,-2,7);
+reduce(pp+0,3,54,-2,7);
 goto end_prods;
-}if((pp+0)->cat==41&&
-(pp+1)->cat==46&&
-((pp+2)->cat==55||
-(pp+2)->cat==36)&&
-(pp+3)->cat==36){
+}if((pp+0)->cat==54&&
+(pp+1)->cat==9&&
+((pp+2)->cat==45||
+(pp+2)->cat==21)&&
+(pp+3)->cat==21){
 
 
 app1(pp+0);
@@ -2065,186 +2123,190 @@ app1(pp+2);
 app_str("\\");
 app_str(" ");
 app1(pp+3);
-reduce(pp+0,4,41,-2,8);
+reduce(pp+0,4,54,-2,8);
 goto end_prods;
-}if((pp+0)->cat==41&&
-(pp+1)->cat==46&&
-(pp+2)->cat==36){
+}if((pp+0)->cat==54&&
+(pp+1)->cat==9&&
+(pp+2)->cat==21){
 
 app1(pp+0);
 app1(pp+1);
 app_str("\\39");
 app1(pp+2);
-reduce(pp+0,3,41,-2,9);
+reduce(pp+0,3,54,-2,9);
 goto end_prods;
 }/*:87*//*88:*/
 #line 244 ""
 
-if((pp+0)->cat==36&&
-(pp+1)->cat==19){
+#line 245 ""
+if((pp+0)->cat==21&&
+(pp+1)->cat==46){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,25,0,10);
+reduce(pp+0,2,2,0,10);
 goto end_prods;
-}if((pp+0)->cat==25&&
-((pp+1)->cat==39||
-(pp+1)->cat==28)&&
-(pp+2)->cat==47){
+}if((pp+0)->cat==2&&
+((pp+1)->cat==65||
+(pp+1)->cat==10)&&
+(pp+2)->cat==55){
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
-reduce(pp+0,3,36,-4,11);
+reduce(pp+0,3,21,-4,11);
 goto end_prods;
-}if((pp+0)->cat==25&&
-(pp+1)->cat==47){
+}if((pp+0)->cat==2&&
+(pp+1)->cat==55){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,36,-4,12);
+reduce(pp+0,2,21,-4,12);
 goto end_prods;
-}if(((pp+0)->cat==36||
-(pp+0)->cat==39||
-(pp+0)->cat==59)&&
-(pp+1)->cat==14){
+}if(((pp+0)->cat==21||
+(pp+0)->cat==65||
+(pp+0)->cat==11)&&
+(pp+1)->cat==41){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,1,0,13);
+reduce(pp+0,2,4,0,13);
 goto end_prods;
-}if((pp+0)->cat==1&&
-(pp+1)->cat==39&&
-(pp+2)->cat==56){
+}if((pp+0)->cat==4&&
+(pp+1)->cat==65&&
+(pp+2)->cat==31){
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
-reduce(pp+0,3,36,-4,14);
+reduce(pp+0,3,21,-4,14);
 goto end_prods;
 }/*:88*//*89:*/
 #line 287 ""
 
-if(((pp+0)->cat==36||
-(pp+0)->cat==39)&&
-(pp+1)->cat==65&&
-(pp+2)->cat==36){
+#line 288 ""
+if(((pp+0)->cat==21||
+(pp+0)->cat==65)&&
+(pp+1)->cat==14&&
+(pp+2)->cat==21){
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
-reduce(pp+0,3,36,-4,15);
+reduce(pp+0,3,21,-4,15);
 goto end_prods;
-}if(((pp+0)->cat==66||
-(pp+0)->cat==3)&&
-(pp+1)->cat==39){
+}if(((pp+0)->cat==18||
+(pp+0)->cat==51)&&
+(pp+1)->cat==65){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,39,-4,16);
+reduce(pp+0,2,65,-4,16);
 goto end_prods;
-}if(((pp+0)->cat==39||
-(pp+0)->cat==41)&&
-((pp+1)->cat==34||
-(pp+1)->cat==49||
-(pp+1)->cat==3)&&
-(pp+2)->cat==39){
+}if(((pp+0)->cat==65||
+(pp+0)->cat==54)&&
+((pp+1)->cat==3||
+(pp+1)->cat==38||
+(pp+1)->cat==51)&&
+(pp+2)->cat==65){
 
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
-reduce(pp+0,3,39,-4,17);
+reduce(pp+0,3,65,-4,17);
 goto end_prods;
-}if((pp+0)->cat==39&&
-(pp+1)->cat==24){
+}if((pp+0)->cat==65&&
+(pp+1)->cat==15){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,39,-4,18);
+reduce(pp+0,2,65,-4,18);
 goto end_prods;
-}if((pp+0)->cat==24&&
-(pp+1)->cat==36){
+}if((pp+0)->cat==15&&
+(pp+1)->cat==21){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,39,-4,19);
+reduce(pp+0,2,65,-4,19);
 goto end_prods;
 }/*:89*//*90:*/
 #line 333 ""
 
-if((pp+0)->cat==39&&
-(pp+1)->cat==46&&
-(pp+2)->cat==39){
+#line 334 ""
+if((pp+0)->cat==65&&
+(pp+1)->cat==9&&
+(pp+2)->cat==65){
 
 app1(pp+0);
 app1(pp+1);
 app_str("\\39");
 app1(pp+2);
-reduce(pp+0,3,39,-4,20);
+reduce(pp+0,3,65,-4,20);
 goto end_prods;
-}if((pp+0)->cat==19&&
-(pp+1)->cat==39&&
-(pp+2)->cat==47){
+}if((pp+0)->cat==46&&
+(pp+1)->cat==65&&
+(pp+2)->cat==55){
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
-reduce(pp+0,3,39,-4,21);
+reduce(pp+0,3,65,-4,21);
 goto end_prods;
-}if((pp+0)->cat==19&&
-(pp+1)->cat==36&&
-(pp+2)->cat==47&&
-(pp+3)->cat==65){
+}if((pp+0)->cat==46&&
+(pp+1)->cat==21&&
+(pp+2)->cat==55&&
+(pp+3)->cat==14){
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
-reduce(pp+0,3,39,-4,22);
+reduce(pp+0,3,65,-4,22);
 goto end_prods;
-}if((pp+0)->cat==19&&
-((pp+1)->cat==55||
-(pp+1)->cat==36)&&
-(pp+2)->cat==47){
+}if((pp+0)->cat==46&&
+((pp+1)->cat==45||
+(pp+1)->cat==21)&&
+(pp+2)->cat==55){
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
-reduce(pp+0,3,59,-1,23);
+reduce(pp+0,3,11,-1,23);
 goto end_prods;
-}if((pp+0)->cat==59&&
-(pp+1)->cat==39){
+}if((pp+0)->cat==11&&
+(pp+1)->cat==65){
 
 app1(pp+0);
 app_str("\\");
 app_str(" ");
 app1(pp+1);
-reduce(pp+0,2,39,-4,24);
+reduce(pp+0,2,65,-4,24);
 goto end_prods;
 }/*:90*//*91:*/
 #line 382 ""
 
-if((pp+0)->cat==2){
+#line 383 ""
+if((pp+0)->cat==23){
 
 app1(pp+0);
-reduce(pp+0,1,49,-1,25);
+reduce(pp+0,1,38,-1,25);
 goto end_prods;
-}if((pp+0)->cat==39&&
+}if((pp+0)->cat==65&&
 (pp+1)->cat==57&&
-(pp+2)->cat==39&&
-(pp+3)->cat==27&&
-(pp+4)->cat==39){
+(pp+2)->cat==65&&
+(pp+3)->cat==34&&
+(pp+4)->cat==65){
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
 app1(pp+3);
 app1(pp+4);
-reduce(pp+0,5,39,-4,26);
+reduce(pp+0,5,65,-4,26);
 goto end_prods;
-}if((pp+0)->cat==10&&
-(pp+1)->cat==39&&
-(pp+2)->cat==13){
+}if((pp+0)->cat==40&&
+(pp+1)->cat==65&&
+(pp+2)->cat==48){
 
 app1(pp+0);
 app(137+1);
@@ -2252,52 +2314,53 @@ app1(pp+1);
 app(137+2);
 app_str("\\kern.5em");
 app1(pp+2);
-reduce(pp+0,3,39,-4,27);
+reduce(pp+0,3,65,-4,27);
 goto end_prods;
-}if((pp+0)->cat==39&&
-(pp+1)->cat==65&&
-(pp+2)->cat==36){
+}if((pp+0)->cat==65&&
+(pp+1)->cat==14&&
+(pp+2)->cat==21){
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
-reduce(pp+0,3,39,-4,28);
+reduce(pp+0,3,65,-4,28);
 goto end_prods;
-}if((pp+0)->cat==36&&
-(pp+1)->cat==7&&
-((pp+2)->cat==36||
-(pp+2)->cat==55)){
+}if((pp+0)->cat==21&&
+(pp+1)->cat==29&&
+((pp+2)->cat==21||
+(pp+2)->cat==45)){
 
 app1(pp+0);
 app_str("\\");
 app_str(" ");
 app1(pp+1);
 app1(pp+2);
-reduce(pp+0,3,6,0,29);
+reduce(pp+0,3,62,0,29);
 goto end_prods;
 }/*:91*//*92:*/
 #line 434 ""
 
-if((pp+0)->cat==6&&
-(pp+1)->cat==14&&
-(pp+2)->cat==56){
+#line 435 ""
+if((pp+0)->cat==62&&
+(pp+1)->cat==41&&
+(pp+2)->cat==31){
 
 app1(pp+0);
 app1(pp+1);
 app_str("\\");
 app_str(",");
 app1(pp+2);
-reduce(pp+0,3,6,0,30);
+reduce(pp+0,3,62,0,30);
 goto end_prods;
-}if((pp+0)->cat==6){
+}if((pp+0)->cat==62){
 
 app1(pp+0);
-reduce(pp+0,1,39,-4,31);
+reduce(pp+0,1,65,-4,31);
 goto end_prods;
-}if((pp+0)->cat==51&&
-(pp+1)->cat==36&&
-(pp+2)->cat==3&&
-(pp+3)->cat==51){
+}if((pp+0)->cat==63&&
+(pp+1)->cat==21&&
+(pp+2)->cat==51&&
+(pp+3)->cat==63){
 
 app1(pp+0);
 app_str("{\\SC");
@@ -2305,38 +2368,39 @@ app1(pp+1);
 app1(pp+2);
 app1(pp+3);
 app_str("}");
-reduce(pp+0,4,51,-3,32);
+reduce(pp+0,4,63,-3,32);
 goto end_prods;
-}if((pp+0)->cat==51&&
-(pp+1)->cat==36){
+}if((pp+0)->cat==63&&
+(pp+1)->cat==21){
 
 app1(pp+0);
 app_str("{\\SC");
 app1(pp+1);
 app_str("}");
-reduce(pp+0,2,51,-3,33);
+reduce(pp+0,2,63,-3,33);
 goto end_prods;
-}if((pp+0)->cat==51&&
-(pp+1)->cat==36){
+}if((pp+0)->cat==63&&
+(pp+1)->cat==21){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,51,-3,34);
+reduce(pp+0,2,63,-3,34);
 goto end_prods;
 }/*:92*//*93:*/
 #line 480 ""
 
-if((pp+0)->cat==51){
+#line 481 ""
+if((pp+0)->cat==63){
 
 app1(pp+0);
-reduce(pp+0,1,39,-4,35);
+reduce(pp+0,1,65,-4,35);
 goto end_prods;
-}if((pp+0)->cat==36&&
-(pp+1)->cat==48&&
-((pp+2)->cat==55||
-(pp+2)->cat==36||
+}if((pp+0)->cat==21&&
+(pp+1)->cat==49&&
+((pp+2)->cat==45||
+(pp+2)->cat==21||
 (pp+2)->cat==57)&&
-(pp+3)->cat==11){
+(pp+3)->cat==43){
 
 
 app1(pp+0);
@@ -2345,14 +2409,14 @@ app1(pp+1);
 app1(pp+2);
 app_str("\\GT");
 app1(pp+3);
-reduce(pp+0,4,36,-4,36);
+reduce(pp+0,4,21,-4,36);
 goto end_prods;
-}if((pp+0)->cat==36&&
-(pp+1)->cat==48&&
+}if((pp+0)->cat==21&&
+(pp+1)->cat==49&&
 (pp+2)->cat==57&&
-(pp+3)->cat==18&&
-(pp+4)->cat==36&&
-(pp+5)->cat==11){
+(pp+3)->cat==53&&
+(pp+4)->cat==21&&
+(pp+5)->cat==43){
 
 
 app1(pp+0);
@@ -2363,56 +2427,57 @@ app1(pp+3);
 app1(pp+4);
 app_str("\\GT");
 app1(pp+5);
-reduce(pp+0,6,36,-4,37);
+reduce(pp+0,6,21,-4,37);
 goto end_prods;
-}if((pp+0)->cat==36&&
-(pp+1)->cat==48&&
-(pp+2)->cat==36&&
-(pp+3)->cat==48){
+}if((pp+0)->cat==21&&
+(pp+1)->cat==49&&
+(pp+2)->cat==21&&
+(pp+3)->cat==49){
 
 app1(pp+0);
 app_str("\\LT");
 app1(pp+1);
-reduce(pp+0,2,5,0,38);
+reduce(pp+0,2,37,0,38);
 goto end_prods;
-}if((pp+0)->cat==5&&
-(pp+1)->cat==36&&
-(pp+2)->cat==48){
+}if((pp+0)->cat==37&&
+(pp+1)->cat==21&&
+(pp+2)->cat==49){
 
 app1(pp+1);
 app_str("\\LT");
 app1(pp+2);
-reduce(pp+1,2,5,0,39);
+reduce(pp+1,2,37,0,39);
 goto end_prods;
 }/*:93*//*94:*/
 #line 539 ""
 
-if((pp+0)->cat==5&&
+#line 540 ""
+if((pp+0)->cat==37&&
 (pp+1)->cat==57&&
-(pp+2)->cat==18&&
-(pp+3)->cat==36){
+(pp+2)->cat==53&&
+(pp+3)->cat==21){
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
 app1(pp+3);
-reduce(pp+0,4,22,0,40);
+reduce(pp+0,4,32,0,40);
 goto end_prods;
-}if((pp+0)->cat==5&&
-((pp+1)->cat==55||
-(pp+1)->cat==36||
+}if((pp+0)->cat==37&&
+((pp+1)->cat==45||
+(pp+1)->cat==21||
 (pp+1)->cat==57)){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,22,0,41);
+reduce(pp+0,2,32,0,41);
 goto end_prods;
-}if((pp+0)->cat==36&&
-(pp+1)->cat==48&&
-((pp+2)->cat==55||
-(pp+2)->cat==36||
+}if((pp+0)->cat==21&&
+(pp+1)->cat==49&&
+((pp+2)->cat==45||
+(pp+2)->cat==21||
 (pp+2)->cat==57)&&
-(pp+3)->cat==46){
+(pp+3)->cat==9){
 
 
 app1(pp+0);
@@ -2420,13 +2485,13 @@ app_str("\\LT");
 app1(pp+1);
 app1(pp+2);
 app1(pp+3);
-reduce(pp+0,4,5,0,42);
+reduce(pp+0,4,37,0,42);
 goto end_prods;
-}if((pp+0)->cat==36&&
-(pp+1)->cat==48&&
+}if((pp+0)->cat==21&&
+(pp+1)->cat==49&&
 (pp+2)->cat==57&&
-(pp+3)->cat==18&&
-(pp+4)->cat==36){
+(pp+3)->cat==53&&
+(pp+4)->cat==21){
 
 app1(pp+0);
 app_str("\\LT");
@@ -2434,14 +2499,14 @@ app1(pp+1);
 app1(pp+2);
 app1(pp+3);
 app1(pp+4);
-reduce(pp+0,5,22,0,43);
+reduce(pp+0,5,32,0,43);
 goto end_prods;
-}if((pp+0)->cat==36&&
-(pp+1)->cat==48&&
-((pp+2)->cat==55||
-(pp+2)->cat==36)&&
-(pp+3)->cat==14&&
-(pp+4)->cat==56){
+}if((pp+0)->cat==21&&
+(pp+1)->cat==49&&
+((pp+2)->cat==45||
+(pp+2)->cat==21)&&
+(pp+3)->cat==41&&
+(pp+4)->cat==31){
 
 
 app1(pp+0);
@@ -2450,70 +2515,72 @@ app1(pp+1);
 app1(pp+2);
 app1(pp+3);
 app1(pp+4);
-reduce(pp+0,5,22,0,44);
+reduce(pp+0,5,32,0,44);
 goto end_prods;
 }/*:94*//*95:*/
 #line 605 ""
 
-if((pp+0)->cat==22&&
-(pp+1)->cat==46){
+#line 606 ""
+if((pp+0)->cat==32&&
+(pp+1)->cat==9){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,5,0,45);
+reduce(pp+0,2,37,0,45);
 goto end_prods;
-}if((pp+0)->cat==22&&
-(pp+1)->cat==14&&
-(pp+2)->cat==56){
+}if((pp+0)->cat==32&&
+(pp+1)->cat==41&&
+(pp+2)->cat==31){
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
-reduce(pp+0,3,22,0,46);
+reduce(pp+0,3,32,0,46);
 goto end_prods;
-}if((pp+0)->cat==22&&
-(pp+1)->cat==11){
+}if((pp+0)->cat==32&&
+(pp+1)->cat==43){
 
 app1(pp+0);
 app_str("\\GT");
 app1(pp+1);
-reduce(pp+0,2,36,-4,47);
+reduce(pp+0,2,21,-4,47);
 goto end_prods;
-}if((pp+0)->cat==11&&
-(pp+1)->cat==11&&
-(pp+2)->cat==11){
+}if((pp+0)->cat==43&&
+(pp+1)->cat==43&&
+(pp+2)->cat==43){
 
 app_str("\\GGG");
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
-reduce(pp+0,3,66,0,48);
+reduce(pp+0,3,18,0,48);
 goto end_prods;
-}if((pp+0)->cat==11&&
-(pp+1)->cat==11){
+}if((pp+0)->cat==43&&
+(pp+1)->cat==43){
 
 app_str("\\GG");
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,66,0,49);
+reduce(pp+0,2,18,0,49);
 goto end_prods;
 }/*:95*//*96:*/
 #line 648 ""
 
-if(((pp+0)->cat==48||
-(pp+0)->cat==11)){
+#line 649 ""
+if(((pp+0)->cat==49||
+(pp+0)->cat==43)){
 
 app1(pp+0);
-reduce(pp+0,1,49,-1,50);
+reduce(pp+0,1,38,-1,50);
 goto end_prods;
-}if((pp+0)->cat==36){
+}if((pp+0)->cat==21){
 
 app1(pp+0);
-reduce(pp+0,1,39,-4,51);
+reduce(pp+0,1,65,-4,51);
 goto end_prods;
-}if(((pp+0)->cat==49||
-(pp+0)->cat==3)&&
-(pp+1)->cat==34){
+}if(((pp+0)->cat==38||
+(pp+0)->cat==51)&&
+(pp+1)->cat==3){
 
 
 app_str("\\buildrel");
@@ -2521,59 +2588,60 @@ app1(pp+0);
 app_str("\\over{");
 app1(pp+1);
 app_str("}");
-reduce(pp+0,2,34,-1,52);
+reduce(pp+0,2,3,-1,52);
 goto end_prods;
-}if((pp+0)->cat==45&&
-(pp+1)->cat==31){
+}if((pp+0)->cat==35&&
+(pp+1)->cat==19){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,4,-2,53);
+reduce(pp+0,2,50,-2,53);
 goto end_prods;
-}if(((pp+0)->cat==45||
-(pp+0)->cat==12)&&
-(pp+1)->cat==39){
+}if(((pp+0)->cat==35||
+(pp+0)->cat==25)&&
+(pp+1)->cat==65){
 
 app1(pp+0);
 app_str("\\");
 app_str(" ");
 app1(pp+1);
-reduce(pp+0,2,39,-4,54);
+reduce(pp+0,2,65,-4,54);
 goto end_prods;
 }/*:96*//*97:*/
 #line 689 ""
 
-if((pp+0)->cat==15&&
-((pp+1)->cat==55||
-(pp+1)->cat==36)){
+#line 690 ""
+if((pp+0)->cat==17&&
+((pp+1)->cat==45||
+(pp+1)->cat==21)){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,36,-4,55);
+reduce(pp+0,2,21,-4,55);
 goto end_prods;
-}if(((pp+0)->cat==39||
-(pp+0)->cat==41)&&
-(pp+1)->cat==31){
+}if(((pp+0)->cat==65||
+(pp+0)->cat==54)&&
+(pp+1)->cat==19){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,4,-2,56);
+reduce(pp+0,2,50,-2,56);
 goto end_prods;
-}if((pp+0)->cat==31){
+}if((pp+0)->cat==19){
 
 app1(pp+0);
-reduce(pp+0,1,4,-2,57);
+reduce(pp+0,1,50,-2,57);
 goto end_prods;
-}if((pp+0)->cat==4&&
-(pp+1)->cat==4){
+}if((pp+0)->cat==50&&
+(pp+1)->cat==50){
 
 app1(pp+0);
 app(137+5);
 app1(pp+1);
-reduce(pp+0,2,4,-2,58);
+reduce(pp+0,2,50,-2,58);
 goto end_prods;
-}if((pp+0)->cat==10&&
-(pp+1)->cat==13){
+}if((pp+0)->cat==40&&
+(pp+1)->cat==48){
 
 app_str("\\");
 app_str(" ");
@@ -2583,14 +2651,15 @@ app_str(" ");
 app_str("\\");
 app_str(" ");
 app1(pp+1);
-reduce(pp+0,2,4,-2,59);
+reduce(pp+0,2,50,-2,59);
 goto end_prods;
 }/*:97*//*98:*/
 #line 732 ""
 
-if((pp+0)->cat==10&&
-(pp+1)->cat==4&&
-(pp+2)->cat==13){
+#line 733 ""
+if((pp+0)->cat==40&&
+(pp+1)->cat==50&&
+(pp+2)->cat==48){
 
 
 app1(pp+0);
@@ -2600,86 +2669,87 @@ app1(pp+1);
 app(137+2);
 app(137+6);
 app1(pp+2);
-reduce(pp+0,3,28,-1,60);
+reduce(pp+0,3,10,-1,60);
+goto end_prods;
+}if((pp+0)->cat==40&&
+(pp+1)->cat==10&&
+(pp+2)->cat==48){
+
+
+app1(pp+0);
+app(137+1);
+app(137);
+app1(pp+1);
+app(137+2);
+app(137+6);
+app1(pp+2);
+reduce(pp+0,3,10,-1,61);
 goto end_prods;
 }if((pp+0)->cat==10&&
-(pp+1)->cat==28&&
-(pp+2)->cat==13){
-
+(pp+1)->cat==50){
 
 app1(pp+0);
-app(137+1);
-app(137);
-app1(pp+1);
-app(137+2);
 app(137+6);
-app1(pp+2);
-reduce(pp+0,3,28,-1,61);
+app1(pp+1);
+reduce(pp+0,2,50,-2,62);
 goto end_prods;
-}if((pp+0)->cat==28&&
-(pp+1)->cat==4){
+}if(((pp+0)->cat==50||
+(pp+0)->cat==10)&&
+(pp+1)->cat==10){
 
 app1(pp+0);
 app(137+6);
 app1(pp+1);
-reduce(pp+0,2,4,-2,62);
-goto end_prods;
-}if(((pp+0)->cat==4||
-(pp+0)->cat==28)&&
-(pp+1)->cat==28){
-
-app1(pp+0);
-app(137+6);
-app1(pp+1);
-reduce(pp+0,2,28,-1,63);
+reduce(pp+0,2,10,-1,63);
 goto end_prods;
 }if((pp+0)->cat==44&&
-(pp+1)->cat==31){
+(pp+1)->cat==19){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,28,-1,64);
+reduce(pp+0,2,10,-1,64);
 goto end_prods;
 }/*:98*//*99:*/
 #line 785 ""
 
+#line 786 ""
 if((pp+0)->cat==44&&
-(pp+1)->cat==4){
+(pp+1)->cat==50){
 
 app1(pp+0);
 app(137+1);
 app(137+5);
 app1(pp+1);
 app(137+2);
-reduce(pp+0,2,28,-1,65);
+reduce(pp+0,2,10,-1,65);
 goto end_prods;
 }if((pp+0)->cat==44&&
-(pp+1)->cat==28){
+(pp+1)->cat==10){
 
 app1(pp+0);
 app(137+1);
 app(137+6);
 app1(pp+1);
 app(137+2);
-reduce(pp+0,2,28,-1,66);
+reduce(pp+0,2,10,-1,66);
 goto end_prods;
-}if((pp+0)->cat==8&&
-((pp+1)->cat==39||
-(pp+1)->cat==59)){
+}if((pp+0)->cat==33&&
+((pp+1)->cat==65||
+(pp+1)->cat==11)){
 
 app1(pp+0);
 app1(pp+1);
 reduce(pp+0,2,44,-1,67);
 goto end_prods;
-}if((pp+0)->cat==54){
+}if((pp+0)->cat==30){
 
 app1(pp+0);
-reduce(pp+0,1,8,0,68);
+reduce(pp+0,1,33,0,68);
 goto end_prods;
-}if((pp+0)->cat==23&&
-(pp+1)->cat==19&&
-(pp+2)->cat==41&&
-(pp+3)->cat==47){
+}if((pp+0)->cat==8&&
+(pp+1)->cat==46&&
+(pp+2)->cat==54&&
+(pp+3)->cat==55){
 
 app1(pp+0);
 app1(pp+1);
@@ -2690,11 +2760,12 @@ goto end_prods;
 }/*:99*//*100:*/
 #line 830 ""
 
-if((pp+0)->cat==33&&
-(pp+1)->cat==19&&
-(pp+2)->cat==4&&
-(pp+3)->cat==39&&
-(pp+4)->cat==47){
+#line 831 ""
+if((pp+0)->cat==39&&
+(pp+1)->cat==46&&
+(pp+2)->cat==50&&
+(pp+3)->cat==65&&
+(pp+4)->cat==55){
 
 app1(pp+0);
 app1(pp+1);
@@ -2705,10 +2776,10 @@ app1(pp+3);
 app1(pp+4);
 reduce(pp+0,5,44,-1,70);
 goto end_prods;
-}if((pp+0)->cat==33&&
-(pp+1)->cat==19&&
-(pp+2)->cat==4&&
-(pp+3)->cat==47){
+}if((pp+0)->cat==39&&
+(pp+1)->cat==46&&
+(pp+2)->cat==50&&
+(pp+3)->cat==55){
 
 app1(pp+0);
 app1(pp+1);
@@ -2716,71 +2787,72 @@ app1(pp+2);
 app1(pp+3);
 reduce(pp+0,4,44,-1,71);
 goto end_prods;
-}if((pp+0)->cat==53&&
-(pp+1)->cat==19){
+}if((pp+0)->cat==7&&
+(pp+1)->cat==46){
 
 app1(pp+0);
-reduce(pp+0,1,8,0,72);
+reduce(pp+0,1,33,0,72);
 goto end_prods;
-}if((pp+0)->cat==53&&
-((pp+1)->cat==36||
-(pp+1)->cat==55)){
+}if((pp+0)->cat==7&&
+((pp+1)->cat==21||
+(pp+1)->cat==45)){
 
 app1(pp+0);
-reduce(pp+0,1,63,0,73);
+reduce(pp+0,1,16,0,73);
 goto end_prods;
-}if((pp+0)->cat==16&&
-(pp+1)->cat==4&&
-(pp+2)->cat==54){
+}if((pp+0)->cat==20&&
+(pp+1)->cat==50&&
+(pp+2)->cat==30){
 
 app1(pp+0);
 app(137+1);
 app1(pp+1);
 app1(pp+2);
-reduce(pp+0,3,60,0,74);
+reduce(pp+0,3,22,0,74);
 goto end_prods;
 }/*:100*//*101:*/
 #line 880 ""
 
-if((pp+0)->cat==16&&
-(pp+1)->cat==28&&
-(pp+2)->cat==54){
+#line 881 ""
+if((pp+0)->cat==20&&
+(pp+1)->cat==10&&
+(pp+2)->cat==30){
 
 app1(pp+0);
 app(137+1);
 app(137+6);
 app1(pp+1);
 app1(pp+2);
-reduce(pp+0,3,60,0,75);
+reduce(pp+0,3,22,0,75);
 goto end_prods;
-}if((pp+0)->cat==60&&
-((pp+1)->cat==39||
-(pp+1)->cat==59)){
+}if((pp+0)->cat==22&&
+((pp+1)->cat==65||
+(pp+1)->cat==11)){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,60,0,76);
+reduce(pp+0,2,22,0,76);
 goto end_prods;
-}if((pp+0)->cat==60&&
-(pp+1)->cat==4){
+}if((pp+0)->cat==22&&
+(pp+1)->cat==50){
 
 app1(pp+0);
 app1(pp+1);
 app(137+2);
 app(137+6);
-reduce(pp+0,2,28,-1,77);
+reduce(pp+0,2,10,-1,77);
 goto end_prods;
-}if((pp+0)->cat==62&&
-((pp+1)->cat==39||
-(pp+1)->cat==59)){
+}if((pp+0)->cat==13&&
+((pp+1)->cat==65||
+(pp+1)->cat==11)){
 
 app1(pp+0);
 app1(pp+1);
 app(137+1);
-reduce(pp+0,2,38,0,78);
+reduce(pp+0,2,52,0,78);
 goto end_prods;
-}if((pp+0)->cat==38&&
-(pp+1)->cat==4){
+}if((pp+0)->cat==52&&
+(pp+1)->cat==50){
 
 app1(pp+0);
 app_str("\\");
@@ -2788,170 +2860,174 @@ app_str(" ");
 app1(pp+1);
 app(137+2);
 app(137+6);
-reduce(pp+0,2,58,0,79);
+reduce(pp+0,2,56,0,79);
 goto end_prods;
 }/*:101*//*102:*/
 #line 929 ""
 
-if((pp+0)->cat==38&&
-(pp+1)->cat==28){
+#line 930 ""
+if((pp+0)->cat==52&&
+(pp+1)->cat==10){
 
 app1(pp+0);
 app(137+6);
 app1(pp+1);
 app(137+2);
 app(137+6);
-reduce(pp+0,2,58,0,80);
+reduce(pp+0,2,56,0,80);
 goto end_prods;
-}if((pp+0)->cat==58&&
-(pp+1)->cat==17&&
-(pp+2)->cat==62){
+}if((pp+0)->cat==56&&
+(pp+1)->cat==61&&
+(pp+2)->cat==13){
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
-reduce(pp+0,3,62,-2,81);
+reduce(pp+0,3,13,-2,81);
 goto end_prods;
-}if((pp+0)->cat==58&&
-(pp+1)->cat==17){
+}if((pp+0)->cat==56&&
+(pp+1)->cat==61){
 
 app1(pp+0);
 app1(pp+1);
 app(137+1);
-reduce(pp+0,2,37,0,82);
+reduce(pp+0,2,28,0,82);
 goto end_prods;
-}if((pp+0)->cat==58){
+}if((pp+0)->cat==56){
 
 app1(pp+0);
-reduce(pp+0,1,28,-1,83);
+reduce(pp+0,1,10,-1,83);
 goto end_prods;
-}if((pp+0)->cat==37&&
-(pp+1)->cat==4){
+}if((pp+0)->cat==28&&
+(pp+1)->cat==50){
 
 app1(pp+0);
 app1(pp+1);
 app(137+2);
 app(137+6);
-reduce(pp+0,2,28,-1,84);
+reduce(pp+0,2,10,-1,84);
 goto end_prods;
 }/*:102*//*103:*/
 #line 971 ""
 
-if((pp+0)->cat==37&&
-(pp+1)->cat==28){
+#line 972 ""
+if((pp+0)->cat==28&&
+(pp+1)->cat==10){
 
 app1(pp+0);
 app(137+6);
 app1(pp+1);
 app(137+2);
 app(137+6);
-reduce(pp+0,2,28,-1,85);
+reduce(pp+0,2,10,-1,85);
 goto end_prods;
-}if((pp+0)->cat==43&&
-(pp+1)->cat==39&&
-(pp+2)->cat==27){
+}if((pp+0)->cat==59&&
+(pp+1)->cat==65&&
+(pp+2)->cat==34){
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
 app(137+1);
-reduce(pp+0,3,52,-1,86);
+reduce(pp+0,3,1,-1,86);
 goto end_prods;
-}if((pp+0)->cat==9&&
-(pp+1)->cat==27){
+}if((pp+0)->cat==47&&
+(pp+1)->cat==34){
 
 app1(pp+0);
 app1(pp+1);
 app(137+1);
-reduce(pp+0,2,52,-1,87);
+reduce(pp+0,2,1,-1,87);
 goto end_prods;
-}if((pp+0)->cat==52&&
-(pp+1)->cat==4){
+}if((pp+0)->cat==1&&
+(pp+1)->cat==50){
 
 app1(pp+0);
 app(137+5);
 app1(pp+1);
-reduce(pp+0,2,52,-1,88);
+reduce(pp+0,2,1,-1,88);
 goto end_prods;
-}if((pp+0)->cat==21&&
-(pp+1)->cat==4){
+}if((pp+0)->cat==60&&
+(pp+1)->cat==50){
 
 app1(pp+0);
 app(137+6);
 app1(pp+1);
-reduce(pp+0,2,52,-1,89);
+reduce(pp+0,2,1,-1,89);
 goto end_prods;
 }/*:103*//*104:*/
 #line 1016 ""
 
-if(((pp+0)->cat==52||
-(pp+0)->cat==21)&&
-(pp+1)->cat==28){
+#line 1017 ""
+if(((pp+0)->cat==1||
+(pp+0)->cat==60)&&
+(pp+1)->cat==10){
 
 app1(pp+0);
 app(137+6);
 app1(pp+1);
-reduce(pp+0,2,21,0,90);
+reduce(pp+0,2,60,0,90);
 goto end_prods;
-}if(((pp+0)->cat==52||
-(pp+0)->cat==21)&&
-(pp+1)->cat==52){
+}if(((pp+0)->cat==1||
+(pp+0)->cat==60)&&
+(pp+1)->cat==1){
 
 app1(pp+0);
 app(137+2);
 app(137+6);
 app1(pp+1);
-reduce(pp+0,2,52,-1,91);
+reduce(pp+0,2,1,-1,91);
 goto end_prods;
-}if(((pp+0)->cat==52||
-(pp+0)->cat==21)&&
-(pp+1)->cat==13){
+}if(((pp+0)->cat==1||
+(pp+0)->cat==60)&&
+(pp+1)->cat==48){
 
 app1(pp+0);
 app(137+2);
-reduce(pp+0,1,4,-2,92);
+reduce(pp+0,1,50,-2,92);
 goto end_prods;
-}if(((pp+0)->cat==64||
-(pp+0)->cat==63)&&
-(pp+1)->cat==55){
+}if(((pp+0)->cat==42||
+(pp+0)->cat==16)&&
+(pp+1)->cat==45){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,55,-2,93);
+reduce(pp+0,2,45,-2,93);
 goto end_prods;
-}if(((pp+0)->cat==64||
-(pp+0)->cat==63)&&
-(pp+1)->cat==36){
+}if(((pp+0)->cat==42||
+(pp+0)->cat==16)&&
+(pp+1)->cat==21){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,36,-4,94);
+reduce(pp+0,2,21,-4,94);
 goto end_prods;
 }/*:104*//*105:*/
 #line 1060 ""
 
-if((pp+0)->cat==41&&
-(pp+1)->cat==19&&
-(pp+2)->cat==47){
+#line 1061 ""
+if((pp+0)->cat==54&&
+(pp+1)->cat==46&&
+(pp+2)->cat==55){
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
 reduce(pp+0,3,44,-1,95);
 goto end_prods;
-}if((pp+0)->cat==25&&
-(pp+1)->cat==41&&
-(pp+2)->cat==47){
+}if((pp+0)->cat==2&&
+(pp+1)->cat==54&&
+(pp+2)->cat==55){
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
 reduce(pp+0,3,44,-1,96);
 goto end_prods;
-}if((pp+0)->cat==41&&
-(pp+1)->cat==19&&
-(pp+2)->cat==41&&
-(pp+3)->cat==47){
+}if((pp+0)->cat==54&&
+(pp+1)->cat==46&&
+(pp+2)->cat==54&&
+(pp+3)->cat==55){
 
 app1(pp+0);
 app1(pp+1);
@@ -2960,8 +3036,8 @@ app1(pp+3);
 reduce(pp+0,4,44,-1,97);
 goto end_prods;
 }if((pp+0)->cat==44&&
-(pp+1)->cat==18&&
-(pp+2)->cat==36){
+(pp+1)->cat==53&&
+(pp+2)->cat==21){
 
 app1(pp+0);
 app1(pp+1);
@@ -2969,8 +3045,8 @@ app1(pp+2);
 reduce(pp+0,3,44,-1,98);
 goto end_prods;
 }if((pp+0)->cat==44&&
-(pp+1)->cat==46&&
-(pp+2)->cat==36){
+(pp+1)->cat==9&&
+(pp+2)->cat==21){
 
 app1(pp+0);
 app1(pp+1);
@@ -2980,78 +3056,80 @@ goto end_prods;
 }/*:105*//*106:*/
 #line 1108 ""
 
-if((pp+0)->cat==39&&
-(pp+1)->cat==19&&
-(pp+2)->cat==41&&
-(pp+3)->cat==47){
+#line 1109 ""
+if((pp+0)->cat==65&&
+(pp+1)->cat==46&&
+(pp+2)->cat==54&&
+(pp+3)->cat==55){
 
 app1(pp+0);
 reduce(pp+0,1,44,-1,100);
 goto end_prods;
-}if((pp+0)->cat==39&&
-(pp+1)->cat==10){
+}if((pp+0)->cat==65&&
+(pp+1)->cat==40){
 
 app1(pp+0);
 reduce(pp+0,1,44,-1,101);
 goto end_prods;
-}if((pp+0)->cat==63&&
+}if((pp+0)->cat==16&&
 (pp+1)->cat==44){
 
 app1(pp+0);
 app1(pp+1);
 reduce(pp+0,2,44,-1,102);
 goto end_prods;
-}if((pp+0)->cat==64&&
+}if((pp+0)->cat==42&&
 (pp+1)->cat==44){
 
 app1(pp+0);
 app1(pp+1);
 reduce(pp+0,2,44,-1,103);
 goto end_prods;
-}if((pp+0)->cat==63&&
-(pp+1)->cat==26){
+}if((pp+0)->cat==16&&
+(pp+1)->cat==6){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,26,-1,104);
+reduce(pp+0,2,6,-1,104);
 goto end_prods;
 }/*:106*//*107:*/
 #line 1144 ""
 
-if((pp+0)->cat==64&&
-(pp+1)->cat==26){
+#line 1145 ""
+if((pp+0)->cat==42&&
+(pp+1)->cat==6){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,26,-1,105);
+reduce(pp+0,2,6,-1,105);
 goto end_prods;
-}if((pp+0)->cat==26&&
-(pp+1)->cat==36){
+}if((pp+0)->cat==6&&
+(pp+1)->cat==21){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,26,-1,106);
+reduce(pp+0,2,6,-1,106);
 goto end_prods;
-}if((pp+0)->cat==26&&
-(pp+1)->cat==18&&
-(pp+2)->cat==36){
-
-app1(pp+0);
-app1(pp+1);
-app1(pp+2);
-reduce(pp+0,3,26,-1,107);
-goto end_prods;
-}if((pp+0)->cat==26&&
-(pp+1)->cat==46&&
-(pp+2)->cat==36){
+}if((pp+0)->cat==6&&
+(pp+1)->cat==53&&
+(pp+2)->cat==21){
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
-reduce(pp+0,3,26,-1,108);
+reduce(pp+0,3,6,-1,107);
 goto end_prods;
-}if((pp+0)->cat==26&&
-(pp+1)->cat==10){
+}if((pp+0)->cat==6&&
+(pp+1)->cat==9&&
+(pp+2)->cat==21){
+
+app1(pp+0);
+app1(pp+1);
+app1(pp+2);
+reduce(pp+0,3,6,-1,108);
+goto end_prods;
+}if((pp+0)->cat==6&&
+(pp+1)->cat==40){
 
 app1(pp+0);
 reduce(pp+0,1,44,-1,109);
@@ -3059,44 +3137,45 @@ goto end_prods;
 }/*:107*//*108:*/
 #line 1183 ""
 
-if((pp+0)->cat==40&&
-(pp+1)->cat==36){
+#line 1184 ""
+if((pp+0)->cat==12&&
+(pp+1)->cat==21){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,20,0,110);
+reduce(pp+0,2,27,0,110);
 goto end_prods;
-}if((pp+0)->cat==20&&
-(pp+1)->cat==65&&
-((pp+2)->cat==36||
-(pp+2)->cat==2)){
+}if((pp+0)->cat==27&&
+(pp+1)->cat==14&&
+((pp+2)->cat==21||
+(pp+2)->cat==23)){
 
 app1(pp+0);
 app1(pp+1);
 app1(pp+2);
-reduce(pp+0,3,20,0,111);
+reduce(pp+0,3,27,0,111);
 goto end_prods;
-}if((pp+0)->cat==20&&
-(pp+1)->cat==31){
+}if((pp+0)->cat==27&&
+(pp+1)->cat==19){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,28,-1,112);
+reduce(pp+0,2,10,-1,112);
 goto end_prods;
-}if((pp+0)->cat==35&&
-(pp+1)->cat==50){
+}if((pp+0)->cat==26&&
+(pp+1)->cat==66){
 
 app1(pp+0);
 app1(pp+1);
 app(137+6);
-reduce(pp+0,2,4,-2,113);
+reduce(pp+0,2,50,-2,113);
 goto end_prods;
-}if((pp+0)->cat==35&&
+}if((pp+0)->cat==26&&
 (pp+1)->cat!=0){
 
 app1(pp+0);
 app1(pp+1);
-reduce(pp+0,2,35,0,114);
+reduce(pp+0,2,26,0,114);
 goto end_prods;
 }
 end_prods:
@@ -3117,9 +3196,11 @@ pp++;
 /*132:*/
 #line 1913 "weave.web"
 {
+#line 1914 "weave.web"
 /*133:*/
 #line 1929 "weave.web"
 
+#line 1930 "weave.web"
 #ifdef DEBUG
 if(lo_ptr>scrap_base&&tracing==1){
 printf("\nIrreducible scrap sequence in section %d:",module_count);
@@ -3153,7 +3234,7 @@ if(tok_ptr+6>tok_mem_end)stat_overflow("token");
 }
 
 /*:131*//*135:*/
-#line 184 "weave.ch"
+#line 186 "weave.ch"
 void C_parse(see_v)
 #line 1997 "weave.web"
 char see_v;
@@ -3184,145 +3265,41 @@ switch(next_control){
 #line 88 ""
 
 #line 89 ""
-case'[':
- *(tok_ptr++)= next_control;
-(++scrap_ptr)->cat= 14;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 192:
-app_str("\\PE");
+case 188:
+app_str("\\S");
 
-(++scrap_ptr)->cat= 49;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case'(':
- *(tok_ptr++)= next_control;
-(++scrap_ptr)->cat= 19;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 185:
-app_str("\\V");
-
-(++scrap_ptr)->cat= 49;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case']':
- *(tok_ptr++)= next_control;
-(++scrap_ptr)->cat= 56;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case')':
- *(tok_ptr++)= next_control;
-(++scrap_ptr)->cat= 47;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 38;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case 191:
 app_str("\\ME");
 
-(++scrap_ptr)->cat= 49;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 184:
-app_str("\\LL");
-
-(++scrap_ptr)->cat= 66;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case'^':
-app_str("\\^");
-
-(++scrap_ptr)->cat= 49;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 187:
-app_str("\\I");
-
-(++scrap_ptr)->cat= 49;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case'*':
- *(tok_ptr++)= next_control;
-(++scrap_ptr)->cat= 2;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 190:
-app_str("\\L");
-
-(++scrap_ptr)->cat= 49;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case'+':
- *(tok_ptr++)= next_control;
-(++scrap_ptr)->cat= 3;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case',':
- *(tok_ptr++)= next_control;
-(++scrap_ptr)->cat= 46;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 188:
-app_str("\\S");
-
-(++scrap_ptr)->cat= 49;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case'{':
-app_str("\\LB");
-
-(++scrap_ptr)->cat= 10;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 38;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case':':
  *(tok_ptr++)= next_control;
-(++scrap_ptr)->cat= 27;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 189:
-app_str("\\G");
-
-(++scrap_ptr)->cat= 49;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case'-':
- *(tok_ptr++)= next_control;
-(++scrap_ptr)->cat= 3;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 34;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case';':
  *(tok_ptr++)= next_control;
-(++scrap_ptr)->cat= 31;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case'.':
- *(tok_ptr++)= next_control;
-(++scrap_ptr)->cat= 65;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case'|':
- *(tok_ptr++)= next_control;
-(++scrap_ptr)->cat= 3;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case'!':
-app_str("\\neg");
-
-(++scrap_ptr)->cat= 66;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 197:
-app_str("\\BJD");
-
-(++scrap_ptr)->cat= 35;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case'}':
-app_str("\\RB");
-
-(++scrap_ptr)->cat= 13;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 19;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case'<':
  *(tok_ptr++)= next_control;
-(++scrap_ptr)->cat= 48;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 194:
-app_str("\\PP");
-
-(++scrap_ptr)->cat= 24;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case'/':
- *(tok_ptr++)= next_control;
 (++scrap_ptr)->cat= 49;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case'~':
-app_str("\\TI");
-
-(++scrap_ptr)->cat= 66;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case'=':
 app_str("\\leftarrow");
 
-(++scrap_ptr)->cat= 34;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 3;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 197:
+app_str("\\BJD");
+
+(++scrap_ptr)->cat= 26;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case'>':
  *(tok_ptr++)= next_control;
-(++scrap_ptr)->cat= 11;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 43;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case'?':
 app_str("\\?");
@@ -3332,30 +3309,134 @@ break;
 case 186:
 app_str("\\W");
 
-(++scrap_ptr)->cat= 49;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 38;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 185:
+app_str("\\V");
+
+(++scrap_ptr)->cat= 38;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 184:
+app_str("\\LL");
+
+(++scrap_ptr)->cat= 18;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 190:
+app_str("\\L");
+
+(++scrap_ptr)->cat= 38;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case'{':
+app_str("\\LB");
+
+(++scrap_ptr)->cat= 40;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case'|':
+ *(tok_ptr++)= next_control;
+(++scrap_ptr)->cat= 51;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case'}':
+app_str("\\RB");
+
+(++scrap_ptr)->cat= 48;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case'~':
+app_str("\\TI");
+
+(++scrap_ptr)->cat= 18;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 194:
+app_str("\\PP");
+
+(++scrap_ptr)->cat= 15;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case'!':
+app_str("\\neg");
+
+(++scrap_ptr)->cat= 18;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 189:
+app_str("\\G");
+
+(++scrap_ptr)->cat= 38;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 187:
+app_str("\\I");
+
+(++scrap_ptr)->cat= 38;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case'%':
 app_str("\\%");
 
-(++scrap_ptr)->cat= 49;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 195:
-app_str("\\EJD");
-
-(++scrap_ptr)->cat= 50;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 196:
-app_str("\\BJC");
-
-(++scrap_ptr)->cat= 30;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 38;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case'&':
 app_str("\\amp");
 
-(++scrap_ptr)->cat= 3;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 51;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case'(':
+ *(tok_ptr++)= next_control;
+(++scrap_ptr)->cat= 46;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case 193:
 app_str("\\MM");
+
+(++scrap_ptr)->cat= 15;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case'[':
+ *(tok_ptr++)= next_control;
+(++scrap_ptr)->cat= 41;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case')':
+ *(tok_ptr++)= next_control;
+(++scrap_ptr)->cat= 55;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case'*':
+ *(tok_ptr++)= next_control;
+(++scrap_ptr)->cat= 23;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case']':
+ *(tok_ptr++)= next_control;
+(++scrap_ptr)->cat= 31;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case'+':
+ *(tok_ptr++)= next_control;
+(++scrap_ptr)->cat= 51;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case',':
+ *(tok_ptr++)= next_control;
+(++scrap_ptr)->cat= 9;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case'^':
+app_str("\\^");
+
+(++scrap_ptr)->cat= 38;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 192:
+app_str("\\PE");
+
+(++scrap_ptr)->cat= 38;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case'-':
+ *(tok_ptr++)= next_control;
+(++scrap_ptr)->cat= 51;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case'.':
+ *(tok_ptr++)= next_control;
+(++scrap_ptr)->cat= 14;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case'/':
+ *(tok_ptr++)= next_control;
+(++scrap_ptr)->cat= 38;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 195:
+app_str("\\EJD");
+
+(++scrap_ptr)->cat= 66;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 196:
+app_str("\\BJC");
 
 (++scrap_ptr)->cat= 24;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
@@ -3380,6 +3461,7 @@ else err_print("! Double at_sign should be used in strings");
 /*141:*/
 #line 2094 "weave.web"
 
+#line 2095 "weave.web"
 switch( *id_first){
 case' ':case'\\':
 case'%':case'$':case'^':case'`':
@@ -3399,7 +3481,7 @@ case'{':case'}':case'~':case'&':case'_':
 #line 79 ""
 
 #line 80 ""
-(++scrap_ptr)->cat= 51;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 63;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 /*:150*/
 #line 2092 "weave.web"
 
@@ -3413,7 +3495,7 @@ case 10:/*151:*/
 
 #line 82 ""
 
-(++scrap_ptr)->cat= 32;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(0+4 *(0))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 64;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(0+4 *(0))); *(++text_ptr)= tok_ptr;;
 /*:151*/
 #line 2021 "weave.web"
 ;break;
@@ -3424,7 +3506,7 @@ case 200:/*149:*/
 p= id_lookup(id_first,id_loc,0);
 if(p->dummy.Ilk==0){
  *(tok_ptr++)= 10240+p-name_dir;
-(++scrap_ptr)->cat= 36;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 21;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 }
 else if(p->dummy.Ilk>3){
 /*156:*/
@@ -3435,57 +3517,53 @@ case 64:
  *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
 app_str(" ");
 
-(++scrap_ptr)->cat= 23;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 42;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case 65:
  *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
 app_str(" ");
 
-(++scrap_ptr)->cat= 8;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 59;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case 66:
- *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
-app_str(" ");
-
-(++scrap_ptr)->cat= 33;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+ *(tok_ptr++)= 2 *10240+p-name_dir;
+(++scrap_ptr)->cat= 21;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case 67:
  *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
 app_str(" ");
 
-(++scrap_ptr)->cat= 42;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 17;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case 68:
  *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
 app_str(" ");
 
-(++scrap_ptr)->cat= 54;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 8;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case 69:
  *(tok_ptr++)= 2 *10240+p-name_dir;
-(++scrap_ptr)->cat= 55;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 45;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case 70:
  *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
 app_str(" ");
 
-(++scrap_ptr)->cat= 62;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 33;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case 71:
- *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
-app_str(" ");
-
-(++scrap_ptr)->cat= 15;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+ *(tok_ptr++)= 2 *10240+p-name_dir;
+(++scrap_ptr)->cat= 47;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case 72:
  *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
 app_str(" ");
 
-(++scrap_ptr)->cat= 17;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 6;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case 73:
  *(tok_ptr++)= 2 *10240+p-name_dir;
-(++scrap_ptr)->cat= 45;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 35;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case 74:
  *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
@@ -3494,75 +3572,79 @@ app_str(" ");
 (++scrap_ptr)->cat= 12;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case 75:
+ *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
+app_str(" ");
+
+(++scrap_ptr)->cat= 61;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 76:
+ *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
+app_str(" ");
+
+(++scrap_ptr)->cat= 39;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 77:
+ *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
+app_str(" ");
+
+(++scrap_ptr)->cat= 16;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 78:
+ *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
+app_str(" ");
+
+(++scrap_ptr)->cat= 30;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 79:
+ *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
+app_str(" ");
+
+(++scrap_ptr)->cat= 5;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 80:
+ *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
+app_str(" ");
+
+(++scrap_ptr)->cat= 7;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 81:
+ *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
+app_str(" ");
+
+(++scrap_ptr)->cat= 20;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 82:
+ *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
+app_str(" ");
+
+(++scrap_ptr)->cat= 13;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+break;
+case 83:
 app_str("\\");
 app_str(" ");
 app_str("\\30");
  *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
 app_str(" ");
 
-(++scrap_ptr)->cat= 18;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 76:
- *(tok_ptr++)= 2 *10240+p-name_dir;
-(++scrap_ptr)->cat= 9;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 77:
- *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
-app_str(" ");
-
-(++scrap_ptr)->cat= 40;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 78:
- *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
-app_str(" ");
-
-(++scrap_ptr)->cat= 64;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 79:
- *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
-app_str(" ");
-
-(++scrap_ptr)->cat= 7;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 80:
- *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
-app_str(" ");
-
 (++scrap_ptr)->cat= 53;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 81:
- *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
-app_str(" ");
-
-(++scrap_ptr)->cat= 43;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 82:
- *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
-app_str(" ");
-
-(++scrap_ptr)->cat= 16;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
-break;
-case 83:
- *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
-app_str(" ");
-
-(++scrap_ptr)->cat= 26;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case 84:
  *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
 app_str(" ");
 
-(++scrap_ptr)->cat= 63;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 29;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case 85:
  *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
 app_str(" ");
 
-(++scrap_ptr)->cat= 44;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 25;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 case 86:
- *(tok_ptr++)= 2 *10240+p-name_dir;
-(++scrap_ptr)->cat= 36;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+ *(tok_ptr++)= 2 *10240+p-name_dir;app_str("\\");
+app_str(" ");
+
+(++scrap_ptr)->cat= 44;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 break;
 }
 /*:156*/
@@ -3579,13 +3661,14 @@ err_print("! Identifier with unmentioned ilk");
 case 238:/*142:*/
 #line 2104 "weave.web"
 
+#line 2105 "weave.web"
 app_str("\\hbox{");while(id_first<id_loc){if(tok_ptr+2>tok_mem_end)stat_overflow("token"); *(tok_ptr++)=  *id_first++;};
  *(tok_ptr++)= '}';
 /*150:*/
 #line 79 ""
 
 #line 80 ""
-(++scrap_ptr)->cat= 51;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 63;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;
 /*:150*/
 #line 2107 "weave.web"
 
@@ -3598,18 +3681,18 @@ case 0:case 248:
 break;
 case(200+1):case(200+2):case(200+3):
 break;
-case 241:app_str("\\,");(++scrap_ptr)->cat= 61;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;break;
+case 241:app_str("\\,");(++scrap_ptr)->cat= 58;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;break;
 case 242:
- *(tok_ptr++)= 137+3;app_str("0");(++scrap_ptr)->cat= 61;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;break;
+ *(tok_ptr++)= 137+3;app_str("0");(++scrap_ptr)->cat= 58;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;break;
 case 244:
-app_str("\\0");(++scrap_ptr)->cat= 61;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;break;
+app_str("\\0");(++scrap_ptr)->cat= 58;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(1+4 *(1))); *(++text_ptr)= tok_ptr;;break;
 case 243:
- *(tok_ptr++)= 137+6;(++scrap_ptr)->cat= 61;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;break;
+ *(tok_ptr++)= 137+6;(++scrap_ptr)->cat= 58;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;break;
 case 245:
- *(tok_ptr++)= 137+7;(++scrap_ptr)->cat= 61;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;break;
+ *(tok_ptr++)= 137+7;(++scrap_ptr)->cat= 58;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;break;
 case 246:
  *(tok_ptr++)= 136; *(tok_ptr++)= ' '; *(tok_ptr++)= 136;
-(++scrap_ptr)->cat= 61;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;break;
+(++scrap_ptr)->cat= 58;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;break;
 case 247:
 /*152:*/
 #line 84 ""
@@ -3617,15 +3700,15 @@ case 247:
 #line 85 ""
 app_str("\\relax");
 
-(++scrap_ptr)->cat= 31;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(0+4 *(0))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 19;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(0+4 *(0))); *(++text_ptr)= tok_ptr;;
 /*:152*/
 #line 2041 "weave.web"
 
 break;
-#line 190 "weave.ch"
-case 240:app_str("\\J");(++scrap_ptr)->cat= 61;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(0+4 *(0))); *(++text_ptr)= tok_ptr;;break;
+#line 192 "weave.ch"
+case 240:app_str("\\J");(++scrap_ptr)->cat= 58;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(0+4 *(0))); *(++text_ptr)= tok_ptr;;break;
 #line 2044 "weave.web"
-default: *(tok_ptr++)= next_control;(++scrap_ptr)->cat= 61;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;break;
+default: *(tok_ptr++)= next_control;(++scrap_ptr)->cat= 58;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;break;
 }
 
 /*:137*/
@@ -3639,16 +3722,17 @@ if(next_control==248||next_control==8)return;
 /*:135*//*143:*/
 #line 2115 "weave.web"
 text_pointer C_translate()
+#line 2116 "weave.web"
 {
 text_pointer p;
 scrap_pointer save_base;
 save_base= scrap_base;scrap_base= scrap_ptr+1;
 C_parse(1);
-#line 196 "weave.ch"
+#line 198 "weave.ch"
 if(next_control!=248)err_print("! Missing vertical_bar after program text");
 #line 2122 "weave.web"
 
-{if(tok_ptr+2>tok_mem_end)stat_overflow("token"); *(tok_ptr++)= 137;};(++scrap_ptr)->cat= 61;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;
+{if(tok_ptr+2>tok_mem_end)stat_overflow("token"); *(tok_ptr++)= 137;};(++scrap_ptr)->cat= 58;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;
 
 p= translate();
 #ifdef STAT
@@ -3661,6 +3745,7 @@ return(p);
 /*:143*//*144:*/
 #line 2139 "weave.web"
 outer_parse()
+#line 2140 "weave.web"
 {
 int bal;
 text_pointer p,q;
@@ -3669,6 +3754,7 @@ if(next_control==8){
 /*146:*/
 #line 2171 "weave.web"
 
+#line 2172 "weave.web"
 if(tok_ptr+50>tok_mem_end||text_ptr+50>tok_start_end
 ||scrap_ptr+50>scrap_info_end){
 #ifdef STAT
@@ -3686,6 +3772,7 @@ stat_overflow("token/text/scrap");
 /*145:*/
 #line 2155 "weave.web"
 
+#line 2156 "weave.web"
  *(tok_ptr++)= 137+5;app_str("\\C{");
 
 bal= copy_comment(1);next_control= 248;
@@ -3697,7 +3784,7 @@ if(next_control==248)bal= copy_comment(bal);
 else bal= 0;
 }
  *(tok_ptr++)= 137+6;
-(++scrap_ptr)->cat= 61;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 58;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;
 
 
 
@@ -3714,6 +3801,7 @@ C_parse(0);
 /*:144*//*168:*/
 #line 2257 "weave.web"
 push_level(p)
+#line 2258 "weave.web"
 text_pointer p;
 {
 if(stack_ptr==stack_end)stat_overflow("stack");
@@ -3732,6 +3820,7 @@ cur_state.tok_field=  *p;cur_state.end_field=  *(p+1);
 /*:168*//*169:*/
 #line 2277 "weave.web"
 pop_level()
+#line 2278 "weave.web"
 {
 cur_state.end_field= (--stack_ptr)->end_field;
 cur_state.tok_field= stack_ptr->tok_field;cur_state.mode_field= stack_ptr->mode_field;
@@ -3783,6 +3872,7 @@ next_control= save_next_control;
 /*:172*//*173:*/
 #line 2353 "weave.web"
 make_output()
+#line 2354 "weave.web"
 {
 eight_bits a,
 b;
@@ -3798,12 +3888,13 @@ boolean save_mode;
 while(1){
 a= get_output();
 reswitch:switch(a){
-#line 202 "weave.ch"
+#line 204 "weave.ch"
 case 137+7+1:return 0;
 #line 2370 "weave.web"
 case 200:case 0201:/*174:*/
 #line 2400 "weave.web"
 
+#line 2401 "weave.web"
 {if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)= '\\';};
 if(a==200)
 if(((cur_name+1)->byte_start-(cur_name)->byte_start)==1){if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)= '|';}
@@ -3820,6 +3911,7 @@ out_name(cur_name);
 case 0200:/*179:*/
 #line 2471 "weave.web"
 {
+#line 2472 "weave.web"
 boolean is_file;
 cur_xref= (xref_pointer)cur_name->equiv_or_xref;
 is_file= cur_xref->num>=2 *10240;
@@ -3841,6 +3933,7 @@ else{if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)= '0';};
 {if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)= ':';};/*180:*/
 #line 2494 "weave.web"
 
+#line 2495 "weave.web"
 k= cur_name->byte_start;k_limit= (cur_name+1)->byte_start;
 cur_mod_name= cur_name;
 while(k<k_limit){
@@ -3848,8 +3941,9 @@ b=  *(k++);
 if(b==64)/*181:*/
 #line 2509 "weave.web"
 
+#line 2510 "weave.web"
 if( *k++!=64){
-#line 210 "weave.ch"
+#line 212 "weave.ch"
 printf("! Illegal control code in section name: <");
 
 fflush(stdout),write(1,(cur_mod_name)->byte_start,(((cur_mod_name)+1)->byte_start-((cur_mod_name))->byte_start));printf(">\n");history= 2;
@@ -3864,10 +3958,11 @@ else{
 /*182:*/
 #line 2522 "weave.web"
 
+#line 2523 "weave.web"
 j= limit+1; *j= 124;delim= 0;
 while(1){
 if(k>=k_limit){
-#line 219 "weave.ch"
+#line 221 "weave.ch"
 printf("! Program Text in section name didn't end: <");
 
 #line 2528 "weave.web"
@@ -3877,6 +3972,7 @@ b=  *(k++);
 if(b==64)/*183:*/
 #line 2544 "weave.web"
 {
+#line 2545 "weave.web"
 if(j>buffer+500-4)stat_overflow("buffer");
  *(++j)= 64; *(++j)=  *(k++);
 }
@@ -3918,6 +4014,7 @@ case 133:case 134:case 135:
 /*175:*/
 #line 2411 "weave.web"
 
+#line 2412 "weave.web"
 if(a==133)out_str("\\mathbin{");
 else if(a==134)out_str("\\mathrel{");
 else out_str("\\mathop{");
@@ -3931,6 +4028,7 @@ if(a==137+1)c++;if(a==137+2)c--;
 /*178:*/
 #line 2460 "weave.web"
 
+#line 2461 "weave.web"
 for(;c>0;c--)out_str("\\1");
 for(;c<0;c++)out_str("\\2");
 
@@ -3945,6 +4043,7 @@ if(a==137+1)c++;if(a==137+2)c--;
 /*178:*/
 #line 2460 "weave.web"
 
+#line 2461 "weave.web"
 for(;c>0;c--)out_str("\\1");
 for(;c<0;c++)out_str("\\2");
 
@@ -3956,6 +4055,7 @@ case 137+1:case 137+2:case 137+3:case 137+4:case 137+5:
 case 137+6:case 137+7:/*176:*/
 #line 2419 "weave.web"
 
+#line 2420 "weave.web"
 if(a<137+5){
 if(cur_state.mode_field==1){
 {if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)= '\\';};{if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)= a-137+'0';};
@@ -3966,6 +4066,7 @@ else if(a==137+3)b= get_output();
 else/*177:*/
 #line 2435 "weave.web"
 {
+#line 2436 "weave.web"
 b= a;save_mode= cur_state.mode_field;c= 0;
 while(1){
 a= get_output();
@@ -3973,6 +4074,7 @@ if(a==137||a==136){
 /*178:*/
 #line 2460 "weave.web"
 
+#line 2461 "weave.web"
 for(;c>0;c--)out_str("\\1");
 for(;c<0;c++)out_str("\\2");
 
@@ -3988,6 +4090,7 @@ goto reswitch;
 /*178:*/
 #line 2460 "weave.web"
 
+#line 2461 "weave.web"
 for(;c>0;c--)out_str("\\1");
 for(;c<0;c++)out_str("\\2");
 
@@ -4021,7 +4124,7 @@ default:{if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)= a;};
 /*:173*//*184:*/
 #line 2556 "weave.web"
 phase_two(){
-#line 226 "weave.ch"
+#line 228 "weave.ch"
 reset_input();
 #line 2558 "weave.web"
 module_count= 0;copy_limbo();
@@ -4034,6 +4137,7 @@ module_count++;
 /*187:*/
 #line 2597 "weave.web"
 
+#line 2598 "weave.web"
 if( *(loc-1)!='*')out_str("\\M");
 
 else{
@@ -4050,6 +4154,7 @@ save_line= out_line;save_place= out_ptr;
 /*188:*/
 #line 2610 "weave.web"
 do{
+#line 2611 "weave.web"
 next_control= copy_TeX();
 switch(next_control){
 case 248:
@@ -4061,6 +4166,7 @@ case 64:{if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)= 64;};break;
 case 12:/*189:*/
 #line 2633 "weave.web"
 {
+#line 2634 "weave.web"
 out_str("\\O{\\~");
 while('0'<= *loc&& *loc<'8'){if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)=  *loc++;};
 {if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)= '}';};
@@ -4072,6 +4178,7 @@ while('0'<= *loc&& *loc<'8'){if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)= 
 case 13:/*190:*/
 #line 2639 "weave.web"
 {
+#line 2640 "weave.web"
 out_str("\\O{\\^");
 while(isxdigit( *loc)){
 {if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)= islower( *loc)?toupper( *loc): *loc;};
@@ -4088,7 +4195,7 @@ loc++;
 case 238:case(200+1):case(200+2):case(200+3):
 case 254:loc-= 2;next_control= get_next(1);
 if(next_control==238)
-#line 237 "weave.ch"
+#line 239 "weave.ch"
 err_print("! TeX string should be in program text only");break;
 #line 2625 "weave.web"
 
@@ -4105,6 +4212,7 @@ case 247:err_print("! You can't do that in TeX text");break;
 /*191:*/
 #line 2653 "weave.web"
 
+#line 2654 "weave.web"
 if(next_control<=252){
 if(save_line!=out_line||save_place!=out_ptr)out_str("\\Y");;save_line= out_line;save_place= out_ptr;
 }
@@ -4113,6 +4221,7 @@ stack_ptr= stack;cur_state.mode_field= 1;
 if(next_control==252)/*193:*/
 #line 2699 "weave.web"
 {
+#line 2700 "weave.web"
  *(tok_ptr++)= 137+4;app_str("\\D");
 
 /*38:*/
@@ -4132,6 +4241,7 @@ else{
 /*195:*/
 #line 2730 "weave.web"
 
+#line 2731 "weave.web"
 /*38:*/
 #line 555 "weave.web"
 
@@ -4166,6 +4276,7 @@ err_print("! Improper macro definition");
 /*194:*/
 #line 2726 "weave.web"
 goto punt_the_definition;
+#line 2727 "weave.web"
 
 /*:194*/
 #line 2741 "weave.web"
@@ -4179,6 +4290,7 @@ err_print("! Macro parameter list must end with )");
 /*194:*/
 #line 2726 "weave.web"
 goto punt_the_definition;
+#line 2727 "weave.web"
 
 /*:194*/
 #line 2748 "weave.web"
@@ -4217,7 +4329,7 @@ err_print("! Equals sign required in macro definition");
 }
 punt_the_definition:
  *(tok_ptr++)= '$'; *(tok_ptr++)= 137+5;
-(++scrap_ptr)->cat= 61;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 58;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;
 
 }
 }
@@ -4228,7 +4340,8 @@ punt_the_definition:
 else/*196:*/
 #line 2757 "weave.web"
 {
-app_str("\\F");(++scrap_ptr)->cat= 61;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;
+#line 2758 "weave.web"
+app_str("\\F");(++scrap_ptr)->cat= 58;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;
 
 
 /*38:*/
@@ -4247,7 +4360,7 @@ printf("\n\tscrap_ptr-scrap_info==%d\n",scrap_ptr-scrap_info);
 if(next_control==200){
  *(tok_ptr++)= 10240+id_lookup(id_first,id_loc,0)-name_dir;
 app_str(" ");
-(++scrap_ptr)->cat= 61;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 58;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;
 
 /*38:*/
 #line 555 "weave.web"
@@ -4260,7 +4373,7 @@ while((next_control= get_next(0))==10);
 if(next_control==200){
  *(tok_ptr++)= 10240+id_lookup(id_first,id_loc,0)-name_dir;
  *(tok_ptr++)= 10;
-(++scrap_ptr)->cat= 61;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;
+(++scrap_ptr)->cat= 58;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;
 /*38:*/
 #line 555 "weave.web"
 
@@ -4288,6 +4401,7 @@ outer_parse();finish_C();
 /*198:*/
 #line 2792 "weave.web"
 
+#line 2793 "weave.web"
 this_module= name_dir;
 if(next_control<=254){
 if(save_line!=out_line||save_place!=out_ptr)out_str("\\Y");;stack_ptr= stack;cur_state.mode_field= 1;
@@ -4297,6 +4411,7 @@ this_module= cur_module;
 /*199:*/
 #line 2809 "weave.web"
 
+#line 2810 "weave.web"
 do next_control= get_next(0);
 while(next_control=='+');
 if(next_control!='=')
@@ -4320,7 +4435,8 @@ app_str("{}$");
 /*160:*/
 #line 500 ""
 
-(++scrap_ptr)->cat= 29;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;
+#line 501 ""
+(++scrap_ptr)->cat= 36;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;
 /*:160*/
 #line 2830 "weave.web"
 
@@ -4335,8 +4451,9 @@ outer_parse();
 /*200:*/
 #line 2833 "weave.web"
 
+#line 2834 "weave.web"
 if(next_control<254){
-#line 243 "weave.ch"
+#line 245 "weave.ch"
 err_print("! You can't do that in program text");
 #line 2836 "weave.web"
 
@@ -4352,7 +4469,8 @@ next_control= get_next(1);
 /*161:*/
 #line 502 ""
 
-(++scrap_ptr)->cat= 28;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(0+4 *(0))); *(++text_ptr)= tok_ptr;;
+#line 503 ""
+(++scrap_ptr)->cat= 10;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(0+4 *(0))); *(++text_ptr)= tok_ptr;;
 /*:161*/
 #line 2846 "weave.web"
 
@@ -4373,10 +4491,12 @@ finish_C();
 /*201:*/
 #line 2853 "weave.web"
 
+#line 2854 "weave.web"
 if(this_module>name_dir){
 /*203:*/
 #line 2874 "weave.web"
 
+#line 2875 "weave.web"
 first_xref= (xref_pointer)this_module->equiv_or_xref;
 this_xref= first_xref->xlink;
 if(this_xref->num>10240){
@@ -4411,6 +4531,7 @@ footnote(0);
 /*206:*/
 #line 2934 "weave.web"
 
+#line 2935 "weave.web"
 out_str("\\fi");finish_line();
 
 flush_buffer(out_buf,0);
@@ -4428,9 +4549,10 @@ flush_buffer(out_buf,0);
 /*:184*//*192:*/
 #line 2674 "weave.web"
 finish_C()
+#line 2675 "weave.web"
 {
 text_pointer p;
-out_str("\\P");{if(tok_ptr+2>tok_mem_end)stat_overflow("token"); *(tok_ptr++)= 137+6;};(++scrap_ptr)->cat= 61;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;
+out_str("\\P");{if(tok_ptr+2>tok_mem_end)stat_overflow("token"); *(tok_ptr++)= 137+6;};(++scrap_ptr)->cat= 58;scrap_ptr->trans_plus.Trans= text_ptr;scrap_ptr->mathness= ((eight_bits)(2+4 *(2))); *(++text_ptr)= tok_ptr;;
 p= translate();
 
  *(tok_ptr++)= p-tok_start+4 *10240;make_output();
@@ -4454,10 +4576,11 @@ tok_ptr= tok_mem+1;text_ptr= tok_start+1;scrap_ptr= scrap_info;
 /*:192*//*204:*/
 #line 2903 "weave.web"
 footnote(flag)
+#line 2904 "weave.web"
 sixteen_bits flag;
 {
 xref_pointer q;
-#line 249 "weave.ch"
+#line 251 "weave.ch"
 if(cur_xref->num<=flag)return 0;
 #line 2908 "weave.web"
 finish_line();{if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)= '\\';};
@@ -4468,7 +4591,7 @@ out_str(" section");
 /*205:*/
 #line 2921 "weave.web"
 
-#line 255 "weave.ch"
+#line 257 "weave.ch"
 q= cur_xref;
 while(q->num>flag)
 {if(q->xlink->num>flag&&q->num==q->xlink->num)
@@ -4506,14 +4629,14 @@ out_str("\\vfill\\end");
 finish_line();
 }
 else{
-#line 269 "weave.ch"
+#line 271 "weave.ch"
 phase= 3;
 #line 2958 "weave.web"
 if(change_exists){
 finish_line();/*210:*/
 #line 2981 "weave.web"
 {
-#line 297 "weave.ch"
+#line 299 "weave.ch"
 out_str("\\ch ");
 k_module= 0;
 while(!changed_module[++k_module]);
@@ -4564,6 +4687,7 @@ if(blink[scrap_ptr->trans_plus.Head-name_dir]==0||cur_depth==255)
 /*222:*/
 #line 3126 "weave.web"
 {
+#line 3127 "weave.web"
 cur_name= scrap_ptr->trans_plus.Head;
 do{
 out_str("\\:");
@@ -4571,6 +4695,7 @@ out_str("\\:");
 /*223:*/
 #line 3138 "weave.web"
 
+#line 3139 "weave.web"
 switch(cur_name->dummy.Ilk){
 case 0:if(((cur_name+1)->byte_start-(cur_name)->byte_start)==1)out_str("\\|");
 else out_str("\\\\");break;
@@ -4592,9 +4717,11 @@ out_name(cur_name);
 /*224:*/
 #line 3157 "weave.web"
 
+#line 3158 "weave.web"
 /*225:*/
 #line 3172 "weave.web"
 
+#line 3173 "weave.web"
 this_xref= (xref_pointer)cur_name->equiv_or_xref;cur_xref= xmem;
 do{
 next_xref= this_xref->xlink;this_xref->xlink= cur_xref;
@@ -4627,6 +4754,7 @@ cur_name= blink[cur_name-name_dir];
 else/*221:*/
 #line 3110 "weave.web"
 {
+#line 3111 "weave.web"
 ASCII c;
 next_name= scrap_ptr->trans_plus.Head;
 do{
@@ -4655,6 +4783,7 @@ out_str("\\fin");finish_line();
 /*228:*/
 #line 3205 "weave.web"
 
+#line 3206 "weave.web"
 do_file= (1==1);
 mod_print(name_dir->dummy.Rlink);
 do_file= (1==0);
@@ -4665,12 +4794,12 @@ mod_print(name_dir->dummy.Rlink);
 /*:228*/
 #line 2967 "weave.web"
 ;
-#line 275 "weave.ch"
+#line 277 "weave.ch"
 out_str("\\bye");finish_line();
 #line 2969 "weave.web"
 
 }
-#line 282 "weave.ch"
+#line 284 "weave.ch"
 check_complete();
 #line 2973 "weave.web"
 }
@@ -4696,6 +4825,7 @@ scrap_ptr->trans_plus.Head= bucket[collate[c]];bucket[collate[c]]= NULL;
 /*:219*//*226:*/
 #line 3183 "weave.web"
 mod_print(p)
+#line 3184 "weave.web"
 name_pointer p;
 {
 boolean is_file;
@@ -4718,16 +4848,18 @@ mod_print(p->dummy.Rlink);
 /*:226*//*230:*/
 #line 3229 "weave.web"
 
+#line 3230 "weave.web"
 stat_overflow(s)
 char *s;
 {
-#line 310 "weave.ch"
+#line 312 "weave.ch"
 printf("! Sorry, capacity exceeded: %s\n",s);
 #line 3234 "weave.web"
 #ifdef STAT
 /*229:*/
 #line 3213 "weave.web"
 
+#line 3214 "weave.web"
 printf(
 "\nMemory usage statistics: %d of %d names, %d of %d cross-references,\n",
 name_ptr-name_dir,name_dir_end-name_dir,

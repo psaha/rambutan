@@ -9,7 +9,7 @@ THEWEAVE=weave
 SPIDER=any.spider
 # CC= cc -DDEBUG -g -DSTAT
 CC = gcc -m64 -fno-builtin-exit -g -DDEBUG -w
-AWK = gawk-RH
+AWK = awk
 DVI=dvi
 
 CPUTYPE=`arch`

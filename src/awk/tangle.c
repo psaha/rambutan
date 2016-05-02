@@ -106,6 +106,7 @@ extern boolean print_where;
 /*:10*//*11:*/
 #line 131 ""
 
+#line 132 ""
 extern int argc;
 extern char * *argv;
 extern no_xref;
@@ -132,6 +133,7 @@ typedef text *text_pointer;
 /*:14*//*25:*/
 #line 254 "tangle.web"
 
+#line 255 "tangle.web"
 typedef struct{
 eight_bits *end_field;
 eight_bits *byte_field;
@@ -178,10 +180,12 @@ int cur_val;
 /*:37*//*46:*/
 #line 520 "tangle.web"
 
+#line 521 "tangle.web"
 short balances[128];
 /*:46*//*50:*/
 #line 583 "tangle.web"
 
+#line 584 "tangle.web"
 name_pointer parm_ptr;
 
 /*:50*//*62:*/
@@ -213,9 +217,11 @@ eight_bits ccode[128];
 /*:86*//*88:*/
 #line 975 "tangle.web"
 short tracing;
+#line 976 "tangle.web"
 /*:88*//*91:*/
 #line 1009 "tangle.web"
 
+#line 1010 "tangle.web"
 boolean comment_continues= 0;
 
 /*:91*//*93:*/
@@ -241,6 +247,7 @@ ASCII *next_param_name_text;
 /*:111*//*132:*/
 #line 1693 "tangle.web"
 
+#line 1694 "tangle.web"
 extern sixteen_bits module_count;
 
 /*:132*/
@@ -272,11 +279,13 @@ last_unnamed= text_info;text_info->text_link= 0;
 /*:22*//*47:*/
 #line 522 "tangle.web"
 
+#line 523 "tangle.web"
 {int i;
 for(i= 0;i<128;i++)balances[i]= 0;
 /*48:*/
 #line 529 "tangle.web"
 
+#line 530 "tangle.web"
 balances[40]= 1;
 balances[41]= -1;
 balances[91]= 1;
@@ -326,10 +335,12 @@ ccode['0']= ccode['1']= ccode['2']= ccode['3']= ccode['4']= 248;
 /*:87*//*89:*/
 #line 976 "tangle.web"
 tracing= 0;
+#line 977 "tangle.web"
 
 /*:89*//*104:*/
 #line 1239 "tangle.web"
 mod_text[0]= ' ';
+#line 1240 "tangle.web"
 
 /*:104*//*113:*/
 #line 1385 "tangle.web"
@@ -343,6 +354,7 @@ param_names[next_param_name]= next_param_name_text;
 /*:112*/
 #line 1385 "tangle.web"
 ;
+#line 1386 "tangle.web"
 
 /*:113*/
 #line 55 "tangle.web"
@@ -359,6 +371,7 @@ wrap_up();
 /*:1*//*19:*/
 #line 138 "tangle.web"
 
+#line 139 "tangle.web"
 names_match(p,first,l)
 name_pointer p;
 ASCII *first;
@@ -371,6 +384,7 @@ return!strncmp(first,p->byte_start,l);
 /*:19*//*20:*/
 #line 149 "tangle.web"
 
+#line 150 "tangle.web"
 init_node(node)
 name_pointer node;
 {
@@ -400,11 +414,13 @@ if(tok_ptr+2>tok_mem_end){{printf("\n! Sorry, capacity exceeded: ");err_print("t
 /*:24*//*28:*/
 #line 294 "tangle.web"
 push_level(p)
+#line 295 "tangle.web"
 name_pointer p;
 {
 /*29:*/
 #line 306 "tangle.web"
 
+#line 307 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>0){
 printf("\nPushing ");fflush(stdout),write(1,(p)->byte_start,(((p)+1)->byte_start-((p))->byte_start));
@@ -431,6 +447,7 @@ void pop_level()
 /*33:*/
 #line 363 "tangle.web"
 
+#line 364 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>0){
 printf("\nPopping ");fflush(stdout),write(1,(cur_state.name_field)->byte_start,(((cur_state.name_field)+1)->byte_start-((cur_state.name_field))->byte_start));
@@ -449,10 +466,12 @@ if(cur_state.name_field->dummy.Ilk==1){
 /*31:*/
 #line 338 "tangle.web"
 
+#line 339 "tangle.web"
 number_of_parameters=  *(cur_state.repl_field->tok_start);
 /*32:*/
 #line 357 "tangle.web"
 
+#line 358 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>1){
 printf("\nUnstacking %d parameters",number_of_parameters);
@@ -514,6 +533,7 @@ if(a==7){
 /*40:*/
 #line 454 "tangle.web"
 
+#line 455 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>2){
 printf(" [#%d]", *cur_state.byte_field);
@@ -526,6 +546,7 @@ printf(" [#%d]", *cur_state.byte_field);
 /*39:*/
 #line 452 "tangle.web"
 
+#line 453 "tangle.web"
 push_level(name_ptr- *cur_state.byte_field++);goto restart;
 /*:39*/
 #line 434 "tangle.web"
@@ -539,10 +560,12 @@ case 0:
 /*41:*/
 #line 461 "tangle.web"
 
+#line 462 "tangle.web"
 if(name_dir[a].dummy.Ilk==1){
 /*42:*/
 #line 475 "tangle.web"
 
+#line 476 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>2){
 printf("\nExpanding macro (");fflush(stdout),write(1,(name_dir+a)->byte_start,(((name_dir+a)+1)->byte_start-((name_dir+a))->byte_start));
@@ -556,6 +579,7 @@ printf("=nd[%d])",a);
 /*44:*/
 #line 492 "tangle.web"
 
+#line 493 "tangle.web"
 {int number_of_parameters;
 while(cur_state.byte_field==cur_state.end_field&&stack_ptr>stack)pop_level();
 number_of_parameters=  *(((text_pointer)name_dir[a].equiv_or_xref)->tok_start);
@@ -574,6 +598,7 @@ while(number_of_parameters-->0){
 /*49:*/
 #line 537 "tangle.web"
 
+#line 538 "tangle.web"
 {int bal;
 eight_bits b,oldb;
 sixteen_bits c;
@@ -581,6 +606,7 @@ bal= 0;
 /*59:*/
 #line 647 "tangle.web"
 
+#line 648 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>2){
 printf("\nScanning #%d...",number_of_parameters+1);
@@ -596,6 +622,7 @@ b=  *cur_state.byte_field++;
 /*56:*/
 #line 613 "tangle.web"
 
+#line 614 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>2){
 printf(" <#%d=",b);fflush(stdout),write(1,(name_ptr-b)->byte_start,(((name_ptr-b)+1)->byte_start-((name_ptr-b))->byte_start));printf("=nd[%d]>",
@@ -614,6 +641,7 @@ if(b>=128){
 /*57:*/
 #line 621 "tangle.web"
 
+#line 622 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>2){
 int c;
@@ -641,17 +669,20 @@ goto done;
 }else if(/*51:*/
 #line 586 "tangle.web"
 (b==2||b==3)
+#line 587 "tangle.web"
 /*:51*/
 #line 559 "tangle.web"
 ){
 /*52:*/
 #line 587 "tangle.web"
 
+#line 588 "tangle.web"
 {if(tok_ptr==tok_mem_end){{printf("\n! Sorry, capacity exceeded: ");err_print("token");history= 3;wrap_up();};}; *tok_ptr++= b;};
 oldb= b;
 /*53:*/
 #line 601 "tangle.web"
 
+#line 602 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>2)printf(" <");
 #endif TRACE_MACROS
@@ -662,6 +693,7 @@ while((b=  *cur_state.byte_field++)!=oldb){
 /*54:*/
 #line 605 "tangle.web"
 
+#line 606 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>2)printf("%c",b);
 #endif TRACE_MACROS
@@ -675,6 +707,7 @@ if(cur_state.byte_field>=cur_state.end_field)
 /*55:*/
 #line 609 "tangle.web"
 
+#line 610 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>2)printf(">");
 #endif TRACE_MACROS
@@ -691,6 +724,7 @@ if(tracing>2)printf(">");
 /*58:*/
 #line 638 "tangle.web"
 
+#line 639 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>2){
 printf(" <");
@@ -722,6 +756,7 @@ if(text_ptr>=text_info_end){{printf("\n! Sorry, capacity exceeded: ");err_print(
 /*60:*/
 #line 653 "tangle.web"
 
+#line 654 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>1){
 printf("\nStacked ");fflush(stdout),write(1,(parm_ptr-1)->byte_start,(((parm_ptr-1)+1)->byte_start-((parm_ptr-1))->byte_start));
@@ -753,6 +788,7 @@ goto restart;
 /*43:*/
 #line 483 "tangle.web"
 
+#line 484 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>2){
 printf("\nExpanding parameter (");fflush(stdout),write(1,(name_dir+a)->byte_start,(((name_dir+a)+1)->byte_start-((name_dir+a))->byte_start));
@@ -775,6 +811,7 @@ cur_val= a;out_char(130);break;
 case 1:/*61:*/
 #line 664 "tangle.web"
 
+#line 665 "tangle.web"
 a-= 10240;
 if((a+name_dir)->equiv_or_xref!=(ASCII *)text_info)push_level(a+name_dir);
 else if(a!=0){
@@ -814,6 +851,7 @@ line[include_depth]++;
 /*:63*//*67:*/
 #line 764 "tangle.web"
 
+#line 765 "tangle.web"
 phase_two(){
 line[include_depth]= 1;
 if(text_info->text_link==0){
@@ -848,6 +886,7 @@ printf("Output file(s):");fflush(stdout);
 /*68:*/
 #line 790 "tangle.web"
 
+#line 791 "tangle.web"
 for(an_output_file= end_output_files;an_output_file>cur_out_file;){
 an_output_file--;
 strncpy(output_file_name,( *an_output_file)->byte_start,400);
@@ -883,12 +922,14 @@ printf("\n");
 /*:67*//*69:*/
 #line 816 "tangle.web"
 out_char(cur_char)
+#line 817 "tangle.web"
 eight_bits cur_char;
 {
 ASCII *j;
 /*70:*/
 #line 841 "tangle.web"
 
+#line 842 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>2){
 switch(cur_char){
@@ -936,6 +977,7 @@ flush_buffer();if(out_state!=4)out_state= 0;break;
 /*71:*/
 #line 878 "tangle.web"
 
+#line 879 "tangle.web"
 case 130:
 if(out_state==1)putc(' ',C_file);
 for(j= (cur_val+name_dir)->byte_start;j<(name_dir+cur_val+1)->byte_start;
@@ -948,6 +990,7 @@ out_state= 1;break;
 /*72:*/
 #line 885 "tangle.web"
 
+#line 886 "tangle.web"
 case 129:
 if(cur_val>0){
 fprintf(C_file,"%s","##");
@@ -981,44 +1024,44 @@ break;
 #line 46 ""
 
 #line 47 ""
-case 24:
-fprintf(C_file,"%s","||");
-if(out_state!=4)out_state= 0;
-break;
-case 29:
-fprintf(C_file,"%s","!=");
-if(out_state!=4)out_state= 0;
-break;
-case 30:
-fprintf(C_file,"%s","!~");
-if(out_state!=4)out_state= 0;
-break;
-case 28:
-fprintf(C_file,"%s","<=");
-if(out_state!=4)out_state= 0;
-break;
 case 26:
 fprintf(C_file,"%s","==");
-if(out_state!=4)out_state= 0;
-break;
-case 27:
-fprintf(C_file,"%s",">=");
-if(out_state!=4)out_state= 0;
-break;
-case 31:
-fprintf(C_file,"%s",">>");
-if(out_state!=4)out_state= 0;
-break;
-case 23:
-fprintf(C_file,"%s","++");
 if(out_state!=4)out_state= 0;
 break;
 case 25:
 fprintf(C_file,"%s","&&");
 if(out_state!=4)out_state= 0;
 break;
+case 24:
+fprintf(C_file,"%s","||");
+if(out_state!=4)out_state= 0;
+break;
+case 28:
+fprintf(C_file,"%s","<=");
+if(out_state!=4)out_state= 0;
+break;
+case 23:
+fprintf(C_file,"%s","++");
+if(out_state!=4)out_state= 0;
+break;
+case 27:
+fprintf(C_file,"%s",">=");
+if(out_state!=4)out_state= 0;
+break;
+case 29:
+fprintf(C_file,"%s","!=");
+if(out_state!=4)out_state= 0;
+break;
+case 31:
+fprintf(C_file,"%s",">>");
+if(out_state!=4)out_state= 0;
+break;
 case 22:
 fprintf(C_file,"%s","--");
+if(out_state!=4)out_state= 0;
+break;
+case 30:
+fprintf(C_file,"%s","!~");
 if(out_state!=4)out_state= 0;
 break;
 /*:75*//*76:*/
@@ -1043,6 +1086,7 @@ break;
 /*:69*//*90:*/
 #line 981 "tangle.web"
 eight_bits skip_ahead()
+#line 982 "tangle.web"
 {
 eight_bits c;
 while(1){
@@ -1065,6 +1109,7 @@ if(c!=0|| *(loc-1)=='>')return(c);
 /*:90*//*92:*/
 #line 1012 "tangle.web"
 
+#line 1013 "tangle.web"
 skip_comment()
 {
 ASCII c;
@@ -1102,6 +1147,7 @@ else loc++;
 /*:92*//*95:*/
 #line 1052 "tangle.web"
 eight_bits get_next()
+#line 1053 "tangle.web"
 {
 eight_bits c;
 while(1){
@@ -1112,6 +1158,7 @@ print_where= 0;
 /*125:*/
 #line 1586 "tangle.web"
 
+#line 1587 "tangle.web"
 store_two_bytes(53248);
 if(changing)id_first= change_file_name;
 else id_first= file_name[include_depth];
@@ -1136,6 +1183,7 @@ else continue;
 /*81:*/
 #line 109 ""
 
+#line 110 ""
 {int len;len= strlen("##");
 if(loc+len<=limit&&!strncmp(loc,"##",len)){
 loc+= len;
@@ -1152,6 +1200,7 @@ loc++;
 if(isdigit(c)||c=='\\'||c=='.')/*97:*/
 #line 1092 "tangle.web"
 {
+#line 1093 "tangle.web"
 id_first= loc-1;
 if( *id_first=='.'&&!isdigit( *loc))goto mistake;
 if( *id_first=='\\')while(isdigit( *loc))loc++;
@@ -1182,6 +1231,7 @@ return(3);
 else if(isalpha(c)||c=='_'||c=='$')/*96:*/
 #line 1084 "tangle.web"
 {
+#line 1085 "tangle.web"
 id_first= --loc;
 while(isalpha( *++loc)||isdigit( *loc)|| *loc=='_');
 if( *loc=='$')while(isdigit( *++loc)|| *loc=='$');
@@ -1195,6 +1245,7 @@ id_loc= loc;return(130);
 else if(c=='\''||c=='\"')/*98:*/
 #line 1122 "tangle.web"
 {
+#line 1123 "tangle.web"
 ASCII delim= c;
 
 
@@ -1248,6 +1299,7 @@ return(2);
 else if(c==35)/*99:*/
 #line 1171 "tangle.web"
 {
+#line 1172 "tangle.web"
 c= ccode[ *loc++];
 switch(c){
 case 0:continue;
@@ -1261,10 +1313,12 @@ cur_module_char=  *(loc-1);
 /*103:*/
 #line 1221 "tangle.web"
 {
+#line 1222 "tangle.web"
 ASCII *k;
 /*105:*/
 #line 1241 "tangle.web"
 
+#line 1242 "tangle.web"
 k= mod_text;
 while(1){
 if(loc>limit&&get_line()==0){
@@ -1276,6 +1330,7 @@ c=  *loc;
 /*106:*/
 #line 1265 "tangle.web"
 
+#line 1266 "tangle.web"
 if(c==35){
 c=  *(loc+1);
 if(c=='>'){
@@ -1316,6 +1371,7 @@ if(cur_module_char=='('){
 /*66:*/
 #line 749 "tangle.web"
 
+#line 750 "tangle.web"
 {
 if(cur_out_file>output_files){
 for(an_output_file= cur_out_file;
@@ -1341,6 +1397,7 @@ return(254);
 case 2:/*107:*/
 #line 1283 "tangle.web"
 {
+#line 1284 "tangle.web"
 id_first= loc++; *(limit+1)= 35; *(limit+2)= '>';
 while( *loc!=35|| *(loc+1)!='>')loc++;
 if(loc>=limit)err_print("! Verbatim string didn't end");
@@ -1358,6 +1415,7 @@ case 248:tracing=  *(loc-1)-'0';continue;
 case 249:/*100:*/
 #line 1194 "tangle.web"
 
+#line 1195 "tangle.web"
 id_first= loc;
 if( *loc=='\\')loc++;
 while( *loc!='\''){
@@ -1375,6 +1433,7 @@ return(249);
 case 5:/*101:*/
 #line 1206 "tangle.web"
 {
+#line 1207 "tangle.web"
 id_first= loc;
 while('0'<= *loc&& *loc<'8')loc++;
 id_loc= loc;
@@ -1387,6 +1446,7 @@ return(5);
 case 6:/*102:*/
 #line 1213 "tangle.web"
 {
+#line 1214 "tangle.web"
 id_first= loc;
 while(isxdigit( *loc))loc++;
 id_loc= loc;
@@ -1410,46 +1470,47 @@ continue;
 mistake:/*74:*/
 #line 3 ""
 
+#line 4 ""
 if(loc+1<=limit){
-if(strncmp("||",loc-1,2)==0){
-loc+= 1;
-return 24;
-}
-else if(strncmp("!=",loc-1,2)==0){
-loc+= 1;
-return 29;
-}
-else if(strncmp("!~",loc-1,2)==0){
-loc+= 1;
-return 30;
-}
-else if(strncmp("<=",loc-1,2)==0){
-loc+= 1;
-return 28;
-}
-else if(strncmp("==",loc-1,2)==0){
+if(strncmp("==",loc-1,2)==0){
 loc+= 1;
 return 26;
-}
-else if(strncmp(">=",loc-1,2)==0){
-loc+= 1;
-return 27;
-}
-else if(strncmp(">>",loc-1,2)==0){
-loc+= 1;
-return 31;
-}
-else if(strncmp("++",loc-1,2)==0){
-loc+= 1;
-return 23;
 }
 else if(strncmp("&&",loc-1,2)==0){
 loc+= 1;
 return 25;
 }
+else if(strncmp("||",loc-1,2)==0){
+loc+= 1;
+return 24;
+}
+else if(strncmp("<=",loc-1,2)==0){
+loc+= 1;
+return 28;
+}
+else if(strncmp("++",loc-1,2)==0){
+loc+= 1;
+return 23;
+}
+else if(strncmp(">=",loc-1,2)==0){
+loc+= 1;
+return 27;
+}
+else if(strncmp("!=",loc-1,2)==0){
+loc+= 1;
+return 29;
+}
+else if(strncmp(">>",loc-1,2)==0){
+loc+= 1;
+return 31;
+}
 else if(strncmp("--",loc-1,2)==0){
 loc+= 1;
 return 22;
+}
+else if(strncmp("!~",loc-1,2)==0){
+loc+= 1;
+return 30;
 }
 }
 /*:74*/
@@ -1469,6 +1530,7 @@ int set_print_where;
 if(t==254){/*125:*/
 #line 1586 "tangle.web"
 
+#line 1587 "tangle.web"
 store_two_bytes(53248);
 if(changing)id_first= change_file_name;
 else id_first= file_name[include_depth];
@@ -1495,6 +1557,7 @@ switch(a){
 /*124:*/
 #line 1529 "tangle.web"
 
+#line 1530 "tangle.web"
 case 130:
 {short n;
 if((n= parameter_number(id_first,id_loc))!=0){
@@ -1517,6 +1580,7 @@ else{
 /*126:*/
 #line 1596 "tangle.web"
 {
+#line 1597 "tangle.web"
 ASCII *try_loc= loc;
 while( *try_loc==' '&&try_loc<limit)try_loc++;
 if( *try_loc=='+'&&try_loc<limit)try_loc++;
@@ -1534,6 +1598,7 @@ a= cur_module-name_dir;
 /*125:*/
 #line 1586 "tangle.web"
 
+#line 1587 "tangle.web"
 store_two_bytes(53248);
 if(changing)id_first= change_file_name;
 else id_first= file_name[include_depth];
@@ -1551,6 +1616,7 @@ case 3:case 2:
 /*127:*/
 #line 1605 "tangle.web"
 
+#line 1606 "tangle.web"
 {if(tok_ptr==tok_mem_end){{printf("\n! Sorry, capacity exceeded: ");err_print("token");history= 3;wrap_up();};}; *tok_ptr++= a;};
 while(id_first<id_loc){
 if( *id_first==35)id_first++;
@@ -1565,6 +1631,7 @@ case 249:
 /*128:*/
 #line 1613 "tangle.web"
 {
+#line 1614 "tangle.web"
 int c;
 if( *id_first==35){
 c= xchr[ *id_first++];
@@ -1597,6 +1664,7 @@ case 5:
 /*129:*/
 #line 1640 "tangle.web"
 {
+#line 1641 "tangle.web"
 long sum= 0;
 while(id_first<id_loc){
 sum= 8 *sum+ *id_first++-'0';
@@ -1614,6 +1682,7 @@ case 6:
 /*130:*/
 #line 1651 "tangle.web"
 {
+#line 1652 "tangle.web"
 long sum= 0;
 while(id_first<id_loc){
 sum= 16 *sum+
@@ -1679,6 +1748,7 @@ print_where= set_print_where;
 /*:109*//*116:*/
 #line 1408 "tangle.web"
 
+#line 1409 "tangle.web"
 int parameter_number(first,loc)
 ASCII *first, *loc;
 {
@@ -1700,6 +1770,7 @@ return 0;
 /*:116*//*131:*/
 #line 1670 "tangle.web"
 
+#line 1671 "tangle.web"
 app_decimal(c)
 long c;
 {long power;
@@ -1746,9 +1817,11 @@ if(next_control!=252)break;
 /*117:*/
 #line 1433 "tangle.web"
 
+#line 1434 "tangle.web"
 /*123:*/
 #line 1521 "tangle.web"
 
+#line 1522 "tangle.web"
 while((next_control= get_next())==10);
 
 /*:123*/
@@ -1757,6 +1830,7 @@ while((next_control= get_next())==10);
 /*121:*/
 #line 1484 "tangle.web"
 
+#line 1485 "tangle.web"
 if(next_control!=130){
 err_print("! Macro name must be an identifier");
 
@@ -1801,9 +1875,11 @@ err_print("! Macro name is multiply defined: ");
 /*120:*/
 #line 1469 "tangle.web"
 
+#line 1470 "tangle.web"
 /*123:*/
 #line 1521 "tangle.web"
 
+#line 1522 "tangle.web"
 while((next_control= get_next())==10);
 
 /*:123*/
@@ -1814,9 +1890,11 @@ do{
 /*122:*/
 #line 1504 "tangle.web"
 
+#line 1505 "tangle.web"
 /*123:*/
 #line 1521 "tangle.web"
 
+#line 1522 "tangle.web"
 while((next_control= get_next())==10);
 
 /*:123*/
@@ -1873,9 +1951,11 @@ goto done_scanning;
 /*114:*/
 #line 1387 "tangle.web"
 
+#line 1388 "tangle.web"
 /*115:*/
 #line 1393 "tangle.web"
 
+#line 1394 "tangle.web"
 if(next_param_name==32)
 {{printf("\n! Sorry, capacity exceeded: ");err_print("parameter names");history= 3;wrap_up();};};
 if(id_loc-id_first>
@@ -1903,6 +1983,7 @@ param_names[++next_param_name]= next_param_name_text;
 /*123:*/
 #line 1521 "tangle.web"
 
+#line 1522 "tangle.web"
 while((next_control= get_next())==10);
 
 /*:123*/
@@ -1965,6 +2046,7 @@ goto done_scanning;
 /*118:*/
 #line 1451 "tangle.web"
 
+#line 1452 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>1){
 printf("\nScanning definition of macro ");fflush(stdout),write(1,(p)->byte_start,(((p)+1)->byte_start-((p))->byte_start));
@@ -1980,6 +2062,7 @@ p->equiv_or_xref= (ASCII *)cur_text;
 /*119:*/
 #line 1458 "tangle.web"
 
+#line 1459 "tangle.web"
 #ifdef TRACE_MACROS
 if(tracing>2){
 printf("\nMacro ");fflush(stdout),write(1,(p)->byte_start,(((p)+1)->byte_start-((p))->byte_start));
@@ -2014,12 +2097,14 @@ cur_text->text_link= 0;
 /*136:*/
 #line 1738 "tangle.web"
 
+#line 1739 "tangle.web"
 switch(next_control){
 case 253:p= name_dir;break;
 case 254:p= cur_module;
 /*137:*/
 #line 1750 "tangle.web"
 
+#line 1751 "tangle.web"
 while((next_control= get_next())=='+');
 if(next_control!='='){
 #line 116 "tangle.ch"
@@ -2039,6 +2124,7 @@ default:return;
 /*138:*/
 #line 1759 "tangle.web"
 
+#line 1760 "tangle.web"
 store_two_bytes((sixteen_bits)(53248+module_count));
 
 /*:138*/
@@ -2048,6 +2134,7 @@ scan_repl(254);
 /*139:*/
 #line 1762 "tangle.web"
 
+#line 1763 "tangle.web"
 if(p==name_dir||p==0){
 (last_unnamed)->text_link= cur_text-text_info;last_unnamed= cur_text;
 }
@@ -2072,6 +2159,7 @@ cur_text->text_link= 2000;
 /*:133*//*140:*/
 #line 1775 "tangle.web"
 phase_one(){
+#line 1776 "tangle.web"
 phase= 1;
 module_count= 0;
 reset_input();
@@ -2084,6 +2172,7 @@ phase= 2;
 /*:140*//*141:*/
 #line 1785 "tangle.web"
 print_stats(){
+#line 1786 "tangle.web"
 printf("\nMemory usage statistics:\n");
 printf("%d names (out of %d)\n",name_ptr-name_dir,4000);
 printf("%d replacement texts (out of %d)\n",text_ptr-text_info,2000);

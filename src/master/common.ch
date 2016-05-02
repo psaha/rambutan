@@ -60,7 +60,7 @@ case fatal_message: printf("(That was a fatal error, my friend.)\n");
 @y
   if (argc == 2)
     { if (strcmp (argv[1], "--version") == 0)
-        { printf("This is %s from Rambutan version 1.32\n",argv[0]);
+        { printf("This is %s from Rambutan version 1.33\n",argv[0]);
           exit(0);
         }
       if (strcmp (argv[1], "--help") == 0)
