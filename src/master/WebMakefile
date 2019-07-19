@@ -19,7 +19,7 @@ CPUTYPE=`arch`
 # the odd placement of # is to prevent any trailing spaces from slipping in
 
 WEBROOT=$(HOME)/Git/rambutan/src#  	# root of the WEB source distribution
-DEST=$(HOME)/Git/rambutan/local/bin#	# place where the executables go
+DEST=$(HOME)/Local/bin#	                # place where the executables go
 MACROS=$(HOME)/Git/rambutan/local/tex#	# place where the macros go
 
 MASTER=$(WEBROOT)/master# 	# master source directory

@@ -12,6 +12,7 @@
 /*:4*//*94:*/
 #line 1046 "tangle.web"
 
+#line 1047 "tangle.web"
 #include"ctype.h"
 
 /*:94*/
@@ -40,6 +41,7 @@ ASCII *id_loc;
 /*:5*//*6:*/
 #line 37 ""
 
+#line 38 ""
 extern ASCII buffer[];
 extern ASCII *buffer_end;
 extern ASCII *loc;
@@ -98,6 +100,7 @@ extern boolean changing;
 /*:9*//*10:*/
 #line 124 ""
 
+#line 125 ""
 typedef unsigned short sixteen_bits;
 extern sixteen_bits module_count;
 extern boolean changed_module[];
@@ -124,6 +127,7 @@ FILE *tex_file;
 /*14:*/
 #line 107 "tangle.web"
 
+#line 108 "tangle.web"
 typedef struct{
 eight_bits *tok_start;
 sixteen_bits text_link;
@@ -133,7 +137,6 @@ typedef text *text_pointer;
 /*:14*//*25:*/
 #line 254 "tangle.web"
 
-#line 255 "tangle.web"
 typedef struct{
 eight_bits *end_field;
 eight_bits *byte_field;
@@ -275,6 +278,7 @@ name_dir->equiv_or_xref= (ASCII *)text_info;
 /*:18*//*22:*/
 #line 188 "tangle.web"
 last_unnamed= text_info;text_info->text_link= 0;
+#line 189 "tangle.web"
 
 /*:22*//*47:*/
 #line 522 "tangle.web"
@@ -300,11 +304,13 @@ balances[125]= -1;
 /*:47*//*65:*/
 #line 745 "tangle.web"
 
+#line 746 "tangle.web"
 cur_out_file= end_output_files= output_files+256;
 
 /*:65*//*87:*/
 #line 946 "tangle.web"
 {
+#line 947 "tangle.web"
 int c;
 for(c= 0;c<=127;c++)ccode[c]= 0;
 ccode[' ']= ccode[011]= ccode['*']= 255;
@@ -347,6 +353,7 @@ mod_text[0]= ' ';
 /*112:*/
 #line 1380 "tangle.web"
 
+#line 1381 "tangle.web"
 next_param_name= 0;
 next_param_name_text= param_name_texts;
 param_names[next_param_name]= next_param_name_text;
@@ -836,6 +843,7 @@ return 1;
 /*:38*//*63:*/
 #line 714 "tangle.web"
 flush_buffer()
+#line 715 "tangle.web"
 {
 putc('\n',C_file);
 #line 47 "tangle.ch"
@@ -868,6 +876,7 @@ printf("Output file: (%s)",C_file_name);fflush(stdout);
 /*27:*/
 #line 283 "tangle.web"
 
+#line 284 "tangle.web"
 stack_ptr= stack+1;cur_state.name_field= name_dir;cur_state.repl_field= text_info->text_link+text_info;
 cur_state.byte_field= cur_state.repl_field->tok_start;cur_state.end_field= (cur_state.repl_field+1)->tok_start;cur_state.mod_field= 0;
 
@@ -1617,6 +1626,7 @@ return(c);
 /*:95*//*109:*/
 #line 1314 "tangle.web"
 scan_repl(t)
+#line 1315 "tangle.web"
 eight_bits t;
 {
 sixteen_bits a;
@@ -1827,6 +1837,7 @@ if(t==1){
 /*110:*/
 #line 1358 "tangle.web"
 
+#line 1359 "tangle.web"
 tok_ptr-= 2;
 while( *tok_ptr<128&& *(tok_ptr+1)==10)tok_ptr--;
 tok_ptr+= 2;
@@ -1931,9 +1942,11 @@ err_print("! Macro name must be an identifier");
 /*135:*/
 #line 1732 "tangle.web"
 
+#line 1733 "tangle.web"
 /*112:*/
 #line 1380 "tangle.web"
 
+#line 1381 "tangle.web"
 next_param_name= 0;
 next_param_name_text= param_name_texts;
 param_names[next_param_name]= next_param_name_text;
@@ -2000,9 +2013,11 @@ err_print("! Macro parameter name not an identifier");
 /*135:*/
 #line 1732 "tangle.web"
 
+#line 1733 "tangle.web"
 /*112:*/
 #line 1380 "tangle.web"
 
+#line 1381 "tangle.web"
 next_param_name= 0;
 next_param_name_text= param_name_texts;
 param_names[next_param_name]= next_param_name_text;
@@ -2024,9 +2039,11 @@ err_print("! Duplicate parameters in macro definition");
 /*135:*/
 #line 1732 "tangle.web"
 
+#line 1733 "tangle.web"
 /*112:*/
 #line 1380 "tangle.web"
 
+#line 1381 "tangle.web"
 next_param_name= 0;
 next_param_name_text= param_name_texts;
 param_names[next_param_name]= next_param_name_text;
@@ -2089,9 +2106,11 @@ err_print("! Macro parameter list must end with )");
 /*135:*/
 #line 1732 "tangle.web"
 
+#line 1733 "tangle.web"
 /*112:*/
 #line 1380 "tangle.web"
 
+#line 1381 "tangle.web"
 next_param_name= 0;
 next_param_name_text= param_name_texts;
 param_names[next_param_name]= next_param_name_text;
@@ -2119,9 +2138,11 @@ err_print("! You must put an = sign before the macro replacement text");
 /*135:*/
 #line 1732 "tangle.web"
 
+#line 1733 "tangle.web"
 /*112:*/
 #line 1380 "tangle.web"
 
+#line 1381 "tangle.web"
 next_param_name= 0;
 next_param_name_text= param_name_texts;
 param_names[next_param_name]= next_param_name_text;
@@ -2171,6 +2192,7 @@ printf("'s replacement text is in text_info[%d]",cur_text-text_info);
 /*112:*/
 #line 1380 "tangle.web"
 
+#line 1381 "tangle.web"
 next_param_name= 0;
 next_param_name_text= param_name_texts;
 param_names[next_param_name]= next_param_name_text;

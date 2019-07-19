@@ -41,6 +41,7 @@ ASCII *id_loc;
 /*:5*//*6:*/
 #line 37 ""
 
+#line 38 ""
 extern ASCII buffer[];
 extern ASCII *buffer_end;
 extern ASCII *loc;
@@ -99,6 +100,7 @@ extern boolean changing;
 /*:9*//*10:*/
 #line 124 ""
 
+#line 125 ""
 typedef unsigned short sixteen_bits;
 extern sixteen_bits module_count;
 extern boolean changed_module[];
@@ -289,6 +291,7 @@ int tracing;
 /*:129*//*159:*/
 #line 499 ""
 char C_file_extension[]= "java";
+#line 500 ""
 /*:159*//*166:*/
 #line 2239 "weave.web"
 
@@ -454,7 +457,6 @@ mod_text[0]= ' ';
 /*:47*//*68:*/
 #line 1055 "weave.web"
 
-#line 1056 "weave.web"
 out_ptr= out_buf+1;out_line= 1;
 /*158:*/
 #line 497 ""
@@ -472,6 +474,7 @@ out_buf[0]= '\\';
 /*:70*//*113:*/
 #line 1463 "weave.web"
 
+#line 1464 "weave.web"
 scrap_base= scrap_info+1;
 #ifdef STAT
 max_scr_ptr= 
@@ -481,6 +484,7 @@ scrap_ptr= scrap_info;
 /*:113*//*167:*/
 #line 2248 "weave.web"
 
+#line 2249 "weave.web"
 #ifdef STAT
 max_stack_ptr= stack;
 #endif STAT
@@ -488,6 +492,7 @@ max_stack_ptr= stack;
 /*:167*//*216:*/
 #line 3056 "weave.web"
 
+#line 3057 "weave.web"
 #ifdef STAT
 max_sort_ptr= scrap_info;
 #endif STAT
@@ -511,6 +516,7 @@ abcdefghijklmnopqrstuvwxyz0123456789");
 /*157:*/
 #line 445 ""
 
+#line 446 ""
 id_lookup("abstract",NULL,77);
 id_lookup("short",NULL,69);
 id_lookup("null",NULL,66);
@@ -631,7 +637,6 @@ else if(q->num>=10240){
 /*22:*/
 #line 251 "weave.web"
 
-#line 252 "weave.web"
 {
 if((mod_xref_switch==10240&&q->num>=2 *10240)||
 (mod_xref_switch==2 *10240&&q->num<2 *10240)){
@@ -1716,6 +1721,7 @@ default:putchar(r);
 /*:114*//*117:*/
 #line 1591 "weave.web"
 app_str(s)
+#line 1592 "weave.web"
 ASCII *s;
 {
 while( *s) *(tok_ptr++)=  *(s++);
@@ -2037,6 +2043,7 @@ init_mathness= last_mathness= 0;
 /*118:*/
 #line 1637 "weave.web"
 {
+#line 1638 "weave.web"
 
 /*86:*/
 #line 151 ""
@@ -2076,6 +2083,7 @@ goto end_prods;
 }/*:86*//*87:*/
 #line 184 ""
 
+#line 185 ""
 if((pp+0)->cat==45&&
 (pp+1)->cat==41&&
 (pp+2)->cat==31){
@@ -3446,6 +3454,7 @@ break;
 case 198:case 199:case 2:/*140:*/
 #line 2075 "weave.web"
 
+#line 2076 "weave.web"
 if(next_control==199)app_str("\\O{");
 
 else if(next_control==198)app_str("\\.{");
@@ -3872,7 +3881,6 @@ next_control= save_next_control;
 /*:172*//*173:*/
 #line 2353 "weave.web"
 make_output()
-#line 2354 "weave.web"
 {
 eight_bits a,
 b;
@@ -3894,7 +3902,6 @@ case 137+7+1:return 0;
 case 200:case 0201:/*174:*/
 #line 2400 "weave.web"
 
-#line 2401 "weave.web"
 {if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)= '\\';};
 if(a==200)
 if(((cur_name+1)->byte_start-(cur_name)->byte_start)==1){if(out_ptr>=out_buf_end)break_out(); *(++out_ptr)= '|';}
@@ -4133,6 +4140,7 @@ finish_line();flush_buffer(out_buf,0);
 while(!input_has_ended)/*186:*/
 #line 2581 "weave.web"
 {
+#line 2582 "weave.web"
 module_count++;
 /*187:*/
 #line 2597 "weave.web"
